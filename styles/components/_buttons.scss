@@ -1,0 +1,14 @@
+@import '../abstract/variables';
+
+.nav-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $border-color;
+}
+
+.nav-button-active {
+    border-bottom: 3px solid $blue;
+    color: $blue;
+}
