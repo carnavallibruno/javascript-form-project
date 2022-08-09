@@ -7,7 +7,7 @@ body {
 
 form .form-group label {
   font-size: 0.875rem;
-  color: #767676;
+  color: red;
 }
 form .form-group .form-control {
   font-size: 1rem;
