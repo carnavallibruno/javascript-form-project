@@ -1,1 +1,26 @@
 @import '../abstract/variables';
+
+form {
+  .form-group {
+    label {
+      font-size: $label-font-size;
+      color: $main-font-color;
+    }
+    .form-control {
+      font-size: $input-font-size;
+      color: $main-font-color;
+    }
+    .form-select {
+      font-size: $input-font-size;
+      color: $main-font-color;
+    }
+    .form-check-input {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 2px;
+    }
+    .form-check-label {
+      color: $title-font-color;
+    }
+  }
+}

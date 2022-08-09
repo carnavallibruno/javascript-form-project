@@ -3,4 +3,25 @@ body {
   margin: 0 auto;
   max-width: 617px;
   font-family: "Nunito";
+}
+
+form .form-group label {
+  font-size: 0.875rem;
+  color: #767676;
+}
+form .form-group .form-control {
+  font-size: 1rem;
+  color: #767676;
+}
+form .form-group .form-select {
+  font-size: 1rem;
+  color: #767676;
+}
+form .form-group .form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 2px;
+}
+form .form-group .form-check-label {
+  color: #111111;
 }/*# sourceMappingURL=style.css.map */
