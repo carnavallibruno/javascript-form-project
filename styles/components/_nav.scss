@@ -1,0 +1,15 @@
+@import '../abstract/variables';
+
+header {
+    h4  {
+        font-size: $title-font-size;
+        color: $title-font-color;
+        font-weight: 600;
+    }
+    .nav {
+        // border: 1px solid red;
+        width: 100%;
+        text-align: center;
+        margin: 2rem 0;
+    }
+}

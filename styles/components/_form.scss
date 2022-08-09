@@ -1,26 +1,48 @@
 @import '../abstract/variables';
 
 form {
+  height: 511px;
+  .birthdayTitle {
+    font-size: $title-font-size;
+    color: $main-font-color;
+    padding-top: 2.125rem;
+  }
   .form-group {
+    padding: 1.063rem 0;
     label {
       font-size: $label-font-size;
-      color: red;
+      color: $main-font-color;
+      margin-bottom: 0.25rem;
     }
     .form-control {
       font-size: $input-font-size;
       color: $main-font-color;
+      border: 2px solid $border-color;
     }
     .form-select {
       font-size: $input-font-size;
       color: $main-font-color;
+      border: 2px solid $border-color;
     }
     .form-check-input {
       width: 1.25rem;
       height: 1.25rem;
       border-radius: 2px;
+      box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+      margin-right: 0.5rem;
     }
     .form-check-label {
       color: $title-font-color;
+      text-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
     }
   }
+
+.next-button {
+  margin-top: 1.313rem;
+  text-align: right;
+    i {
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+  }
+}
 }

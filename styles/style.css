@@ -1,27 +1,78 @@
 @import './reset.css';
 body {
   margin: 0 auto;
-  max-width: 617px;
+  max-height: 47.688rem;
+  max-width: 38.563rem;
   font-family: "Nunito";
+  padding: 3.125rem 3.25rem;
 }
 
+form {
+  height: 511px;
+}
+form .birthdayTitle {
+  font-size: 1.125rem;
+  color: #767676;
+  padding-top: 2.125rem;
+}
+form .form-group {
+  padding: 1.063rem 0;
+}
 form .form-group label {
   font-size: 0.875rem;
-  color: red;
+  color: #767676;
+  margin-bottom: 0.25rem;
 }
 form .form-group .form-control {
   font-size: 1rem;
   color: #767676;
+  border: 2px solid #AAAAAA;
 }
 form .form-group .form-select {
   font-size: 1rem;
   color: #767676;
+  border: 2px solid #AAAAAA;
 }
 form .form-group .form-check-input {
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-right: 0.5rem;
 }
 form .form-group .form-check-label {
   color: #111111;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+form .next-button {
+  margin-top: 1.313rem;
+  text-align: right;
+}
+form .next-button i {
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+header h4 {
+  font-size: 1.125rem;
+  color: #111111;
+  font-weight: 600;
+}
+header .nav {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.nav-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #AAAAAA;
+}
+
+.nav-button-active {
+  border-bottom: 3px solid #074EE8;
+  color: #074EE8;
 }/*# sourceMappingURL=style.css.map */
