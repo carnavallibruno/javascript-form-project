@@ -37,12 +37,16 @@ form {
     }
   }
 
-.next-button {
+.blue-button-container {
   margin-top: 1.313rem;
   text-align: right;
-    i {
-      margin-left: 0.3rem;
-      margin-right: 0.3rem;
+  display: flex;
+  justify-content: flex-end;
+
+  .blue-button { // ? applies to every single button in the page as all of them are blue
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 }

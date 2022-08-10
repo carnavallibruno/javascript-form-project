@@ -5,6 +5,7 @@ body {
   max-width: 38.563rem;
   font-family: "Nunito";
   padding: 3.125rem 3.25rem;
+  border: 5px solid lightblue;
 }
 
 form {
@@ -44,16 +45,20 @@ form .form-group .form-check-label {
   color: #111111;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-form .next-button {
+form .blue-button-container {
   margin-top: 1.313rem;
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
-form .next-button i {
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+form .blue-button-container .blue-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header h4 {
+header .form-title {
+  font-family: "Inter", sans-serif;
   font-size: 1.125rem;
   color: #111111;
   font-weight: 600;
