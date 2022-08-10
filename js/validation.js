@@ -1,12 +1,16 @@
 // ? Validation for the name checkboxes
 function validateFullName(name) {
   if (typeof name === 'string') {
+    console.log(name);
     return true;
   }
   else {
+    var nameField = document.querySelector(".fullNameField");
+    nameField.createElement("p").textContent("Nome inválido.");
     return false;
   }
 }
+
 
 // ? Validation in case the user attempts to submit an empty field
 function validateEmptyField(content) {
@@ -27,4 +31,9 @@ function validateTermsAndPrivacy() {
   else {
     return alert("You must agree to the terms of service.")
   }
+}
+
+function arrayValidation() {
+  var array = [];
+  array.appendChild(validateFullName());
 }

@@ -1,7 +1,7 @@
 @import '../abstract/variables';
 
 form {
-  height: 511px;
+  height: 31.938rem;
   .birthdayTitle {
     font-size: $title-font-size;
     color: $main-font-color;
@@ -39,7 +39,6 @@ form {
   }
   .form-group--certificates {
     position: relative;
-    text-align: right;
     .form-group--favorite {
       position: absolute;
       right: 0.75rem;
