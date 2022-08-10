@@ -21,13 +21,13 @@
     
     <!-- ? Navbar -->
     <ul class="nav d-flex">
-      <li class="nav-item col">
+      <li id="nav-button-basic" class="nav-item col">
         <button class="nav-button nav-button-active" href="#">Basic</button>
       </li>
-      <li class="nav-item col">
+      <li id="nav-button-social" class="nav-item col">
         <button class="nav-button" href="#">Social</button>
       </li>
-      <li class="nav-item col">
+      <li id="nav-button-certificates" class="nav-item col">
         <button class="nav-button" href="#">Certificates</button>
       </li>
     </ul>
@@ -43,7 +43,7 @@
     </div>
     <div class="form-group col-12">
       <label for="inputNickname">Nickname</label>
-      <input type="password" class="form-control" id="inputNickname" placeholder="Juanito">
+      <input type="name" class="form-control" id="inputNickname" placeholder="Juanito">
     </div>
     <div class="row g-0 d-flex justify-content-between">
       <div class="form-group col-7 p-0 nogutter">
@@ -66,10 +66,7 @@
         <!-- * Day -->
         <label for="selectDay">Day</label>
         <select class="form-select" id="selectDay" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="1">01</option>
         </select>
       </div>
       
@@ -77,10 +74,7 @@
       <div class="form-group col-3">
         <label for="selectMonth">Month</label>
         <select class="form-select" id="selectMonth" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="1">01</option>
         </select>
       </div>
       
@@ -95,9 +89,10 @@
         </select>
       </div>
       
+      <!-- * Age -->
       <div class="form-group col-2">
         <label for="formAge">Age</label>
-        <input type="text" class="form-control" id="formAge" placeholder="18">
+        <input disabled type="text" class="form-control" id="formAge" placeholder="18">
       </div>
     </div>
   </div>
@@ -117,6 +112,9 @@
   </div>
 </form>
 
+
+
+
 <!-- ? Form 2 (Social) -->
 <form class="second-tab d-flex flex-column justify-content-between">
   <div class="form-container">
@@ -130,7 +128,7 @@
     <!-- ? GitHub -->
     <div class="form-group col-12">
       <label for="inputGithub">Github *</label>
-      <input type="url" class="form-control" id="inputNickname" placeholder="https://github.com/foobar">
+      <input type="url" class="form-control" id="inputGitHub" placeholder="https://github.com/foobar">
     </div>    
   </div>
   
@@ -190,8 +188,12 @@
 
 
 
-
+<!-- Bootstrap Imports -->
 <script src="https://kit.fontawesome.com/f1cccd729f.js" crossorigin="anonymous"></script>  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+<!-- JavaScript Scripts -->
+<script src="./js/validation.js"></script> <!-- ? This file must come first in order for the functions to be called in before their call is loaded -->
+<script src="./js/index.js"></script>
 </body>
 </html>
