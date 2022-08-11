@@ -8,9 +8,14 @@ header {
         font-weight: 600;
     }
     .nav {
-        // border: 1px solid red;
         width: 100%;
         text-align: center;
         margin: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .form-title {
+        text-align: center;
     }
 }

@@ -59,7 +59,7 @@
       <!-- ? Phone number -->
       <div class="form-group col-12 col-sm-4 phoneField">
         <label for="inputPhone">Phone</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="(83) 00000-0000" onchange="phoneMask(this.value)">
+        <input type="text" class="form-control" id="inputPhone" placeholder="(83) 00000-0000" onchange="validateNumber(this.value); phoneMask(this.value)"> 
       </div>
     </div>
     
@@ -72,15 +72,15 @@
       <div class="form-group col-12 col-sm-3 dayField">
         <!-- * Day -->
         <label for="selectDay">Day</label>
-        <select class="form-select" id="selectDay" aria-label="Default select example">
-          <option value="0">Day</option>
+        <select class="form-select" id="selectDay" onchange="ageValue(this.value); validateEmptyField(this.value)" aria-label="Default select example">
+          <option class="dayOption" value="0">Day</option>
         </select>
       </div>
       
       <!-- * Month -->
       <div class="form-group col-12 col-sm-3 monthField">
         <label for="selectMonth">Month</label>
-        <select class="form-select" id="selectMonth" aria-label="Default select example">
+        <select class="form-select" id="selectMonth" onchange="ageValue(this.value); validateEmptyField(this.value)" aria-label="Default select example">
           <option value="0">Month</option>
         </select>
       </div>
@@ -88,7 +88,7 @@
       <!-- * Year -->
       <div class="form-group col-12 col-sm-3 yearField">
         <label for="selectYear">Year</label>
-        <select class="form-select" id="selectYear" onchange="ageValue(); validateEmptyField(this.value)" aria-label="Default select example">
+        <select class="form-select" id="selectYear" onchange="ageValue(this.value); validateEmptyField(this.value)" aria-label="Default select example">
           <option value="0">Year</option>
         </select>
       </div>
@@ -154,21 +154,26 @@
 <form class="third-tab d-none">
 
   <!-- ? Certificates -->
-  <div id="form-certificates" class="form-group col-12 form-group--certificates">
+  <div id="form-certificates" class="form-group col-12">
       <label for="inputCertificates">Certificates</label>
+      <div class="form-group--certificates d-flex">
         <input type="url" class="form-control form-control--certificates" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-        
-
-      <!-- <div class="form-group--favorite">
-        <i class="fa-regular fa-heart"></i>
-      </div> -->
-
+        <button type="button" class="heart-button"><i class="fa-regular fa-heart heart-button-margin"></i></button>
+      </div>
     </div>
   </div>
 
-  <!-- ? More button -->
-  <div class="blue-button-container">
-    <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fa-solid fa-plus"></i><p class="button-more-margin">More</p><i class="fa-solid fa-angle-right"></i></button>
+  <!-- ? Less button -->
+  <div class="d-flex justify-content-end">
+    <div class="d-none blue-button-container me-4">
+      <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fas fa-minus"></i><p class="button-more-margin">Less</p></i></button>
+    </div>
+
+
+    <!-- ? More button -->
+    <div class="blue-button-container">
+      <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fa-solid fa-plus"></i><p class="button-more-margin">More</p><i class="fa-solid fa-angle-right"></i></button>
+    </div>
   </div>
 
   <!-- ? Team name -->

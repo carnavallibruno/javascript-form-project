@@ -1,3 +1,5 @@
+// var arrayValidation = [{id: name, status: false}, {id: email, status: false}, {id: birthday, status: false}, {id: checkbox, status: false}];
+
 // ? Validation for the name
 function validateFullName(name) {
   var regExName = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
@@ -5,6 +7,7 @@ function validateFullName(name) {
 
   if (matchName) {
     console.log("nome correto");
+    arrayValidation[0].push({status: true});
     return true;
   }
   else {
@@ -28,6 +31,23 @@ function validateEmail(email) {
   }
 }
 
+// ? Validation for number elements
+function validateNumber(number) {
+  var regExNumber = /^\(?([0-9]{2})\)?([0-9]{4,5})\-?([0-9]{4})$/mg;
+  var matchNumber = regExNumber.test(number);
+
+  if (matchNumber) {
+    console.log(number);
+    return true;
+  }
+  else {
+    console.log("Número incorreto");
+    // Mensagem
+    return false;
+  }
+}
+
+
 // ? Validation for URLs
 function validateUrl(url) {
   var regExUrl = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
@@ -36,6 +56,7 @@ function validateUrl(url) {
 
   if (matchUrl) {
     console.log(url);
+    arrayValidation.appendChild();
     return true;
   }
   else {
@@ -48,6 +69,7 @@ function validateUrl(url) {
 function validateEmptyField(content) {
   if (content.length != 0) {
     console.log("campo ok")
+    // arrayValidation.appendChild(1);
     return true;
   }
   else {
@@ -67,16 +89,14 @@ function validateTermsAndPrivacy() {
   }
 }
 
-function arrayValidation() {
-  var array = [];
-  array.appendChild(validateFullName());
-}
-
-
-
-
 // ? Event listeners
 
 // * Checkbox validation
 var checkButton = document.querySelector("#gridCheck");
 checkButton.addEventListener("change", validateTermsAndPrivacy);
+
+
+// var allTrue = arrayValidation.every(obj => obj.status === true)
+// if(allTrue) {
+//   console.log('Todos os itens do formulario estao preenchidos');
+// }

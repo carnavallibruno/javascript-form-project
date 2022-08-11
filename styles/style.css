@@ -6,6 +6,7 @@ body {
   max-width: 38.563rem;
   font-family: "Nunito";
   padding: 3.125rem 3.25rem;
+  border: 5px solid lightblue;
 }
 
 form {
@@ -45,11 +46,22 @@ form .form-group .form-check-label {
   color: #111111;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-form .form-control--certificates {
-  background-color: transparent;
-  background: url("../styles/assets/heart.svg") no-repeat;
-  background-size: 20px;
-  background-position: 95%;
+form .form-group .form-control--certificates {
+  border-right: none;
+  border-radius: 5px 0px 0px 5px;
+}
+form .form-group .heart-button {
+  border: 2px solid #AAAAAA;
+  border-radius: 0px 5px 5px 0px;
+  border-left: none;
+  background-color: white;
+}
+form .form-group .heart-button .heart-button-margin {
+  margin-right: 0.75rem;
+}
+form .form-group .heart-button i {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid red;
 }
 form .blue-button-container {
   margin-top: 1.313rem;
@@ -60,6 +72,7 @@ form .blue-button-container {
 form .blue-button-container .blue-button {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 form .blue-button-container .button-next-margin {
   margin-right: 0.75rem;
@@ -84,6 +97,11 @@ header .nav {
   margin: 2rem 0;
 }
 
+@media screen and (max-width: 426px) {
+  .form-title {
+    text-align: center;
+  }
+}
 .nav-button {
   width: 100%;
   padding: 0.75rem;
