@@ -10,7 +10,7 @@ body {
 }
 
 form {
-  height: 511px;
+  height: 31.938rem;
 }
 form .birthdayTitle {
   font-size: 1.125rem;
@@ -96,4 +96,8 @@ header .nav {
 .nav-button-active {
   border-bottom: 3px solid #074EE8;
   color: #074EE8;
+}
+
+.error {
+  color: red;
 }/*# sourceMappingURL=style.css.map */

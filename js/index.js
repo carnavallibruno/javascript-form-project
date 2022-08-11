@@ -1,79 +1,34 @@
-// ? Navbar buttons variables
-var basicButton = document.querySelector(".nav-button-basic");
-var socialButton = document.querySelector(".nav-button-social");
-var certificatesButton = document.querySelector(".nav-button-certificates");
+// ? Validation for URLs
+function validateUrl(url) {
+  var regExUrl = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+  
+  var matchUrl = regExUrl.test(url);
 
-// ? Form page variables
-var basicPage = document.querySelector(".first-tab");
-var socialPage = document.querySelector(".second-tab");
-var certificatesPage = document.querySelector(".third-tab");
-
-// ? Next button variables
-
-var nextBasicButton = document.querySelector(".next-button-basic");
-var nextSocialButton = document.querySelector(".next-button-social");
-
-// ? Swap page event listeners
-basicButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapFirstPage();
-});
-
-socialButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapSecondPage();
-});
-
-certificatesButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapThirdPage();
-});
-
-// ? Swap page event listeners (next button)
-nextBasicButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapSecondPage();
-});
-
-nextSocialButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapThirdPage();
-});
-
-// ? Swap page functions
-function swapFirstPage () {
-  basicButton.classList.add("nav-button-active");
-  socialButton.classList.remove("nav-button-active");
-  certificatesButton.classList.remove("nav-button-active");
-
-  basicPage.classList.remove("d-none");
-  socialPage.classList.add("d-none");
-  certificatesPage.classList.add("d-none");
+  if (matchUrl) {
+    console.log(url);
+    return true;
+  }
+  else {
+    console.log("não");
+    return false;
+  }
 }
 
-function swapSecondPage () {
-  basicButton.classList.remove("nav-button-active");
-  socialButton.classList.add("nav-button-active");
-  certificatesButton.classList.remove("nav-button-active");
+function addCertificate(event) {
+    event.preventDefault();
+    addLines();
 
-  basicPage.classList.add("d-none");
-  socialPage.classList.remove("d-none");
-  certificatesPage.classList.add("d-none");
+    var teste = document.getElementById('nome');
+    console.log(teste);
+    
+
 }
 
-function swapThirdPage () {
-  basicButton.classList.remove("nav-button-active");
-  socialButton.classList.remove("nav-button-active");
-  certificatesButton.classList.add("nav-button-active");
+function addLines() {
+    var certificateContainer = document.getElementById('form-group--certificates');
 
-  basicPage.classList.add("d-none");
-  socialPage.classList.add("d-none");
-  certificatesPage.classList.remove("d-none");
+    var div = document.createElement('div');
+    div.innerHTML = '<input type="url" class="form-control" id="inputTeamName" onchange="validateEmptyField(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">'
+
+    certificateContainer.appendChild(div);
 }
-
-
-// ? Checkbox validation
-var checkButton = document.querySelector("#gridCheck");
-checkButton.addEventListener("change", validateTermsAndPrivacy);
-
-// ? Name validation

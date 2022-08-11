@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="./styles/style.css">
   <title>Team Project</title>
 </head>
+<script src="./js/birthday-dropdown.js" defer></script>
 
-<body>
+<body onload="dateOfBirth()">
   <header>
     
     <!-- ? Title  -->
@@ -36,22 +37,29 @@
   <!-- ? Form 1 (Basic) -->
   <form class="first-tab d-flex flex-column">
     
+    <!-- ? Full Name -->
     <div class="form-group col-12 fullNameField">
       <label for="inputFullName">Full Name *</label>
-      <input type="name" class="form-control" onchange="validateFullName(this.value)" id="inputFullName" placeholder="Foo Bar">
+      <input type="name" class="form-control" onchange="validateFullName(this.value); validateEmptyField(this.value)" id="inputFullName" placeholder="Foo Bar">
     </div>
+
+    <!-- ? Nickname -->
     <div class="form-group col-12">
       <label for="inputNickname">Nickname</label>
       <input type="name" class="form-control" id="inputNickname" placeholder="Juanito">
     </div>
+
     <div class="row g-0 d-flex justify-content-between">
+      <!-- ? Email -->
       <div class="form-group col-12 col-sm-7 emailField">
         <label for="inputEmail">Email *</label>
-        <input type="text" class="form-control" id="inputEmail" placeholder="foo@bar.com">
+        <input type="text" class="form-control" onchange="validateEmail(this.value); validateEmptyField(this.value)" id="inputEmail" placeholder="foo@bar.com">
       </div>
+
+      <!-- ? Phone number -->
       <div class="form-group col-12 col-sm-4 phoneField">
         <label for="inputPhone">Phone</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="(83) 00000-0000">
+        <input type="text" class="form-control" id="inputPhone" placeholder="(83) 00000-0000" onchange="phoneMask(this.value)">
       </div>
     </div>
     
@@ -66,7 +74,6 @@
         <label for="selectDay">Day</label>
         <select class="form-select" id="selectDay" aria-label="Default select example">
           <option value="0">Day</option>
-          <option value="1">01</option>
         </select>
       </div>
       
@@ -75,26 +82,21 @@
         <label for="selectMonth">Month</label>
         <select class="form-select" id="selectMonth" aria-label="Default select example">
           <option value="0">Month</option>
-          <option value="1">01</option>
         </select>
       </div>
       
       <!-- * Year -->
       <div class="form-group col-12 col-sm-3 yearField">
         <label for="selectYear">Year</label>
-        <select class="form-select" id="selectYear" aria-label="Default select example">
+        <select class="form-select" id="selectYear" onchange="ageValue(); validateEmptyField(this.value)" aria-label="Default select example">
           <option value="0">Year</option>
-          <option value="1">1991</option>
-          <option value="2">One</option>
-          <option value="3">Two</option>
-          <option value="4">Three</option>
         </select>
       </div>
       
       <!-- * Age -->
       <div class="form-group col-12 col-sm-2">
         <label for="formAge">Age</label>
-        <input disabled type="text" class="form-control" id="formAge" placeholder="18">
+        <input disabled type="text" class="form-control" id="formAge" placeholder="Age">
       </div>
     </div>
   </div>
@@ -126,13 +128,13 @@
     <!-- ? LinkedIn -->
     <div class="form-group col-12">
       <label for="inputLinkedin">LinkedIn</label>
-      <input type="url" class="form-control" id="inputLinkedin" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+      <input type="url" class="form-control" id="inputLinkedin" onchange="validateUrl(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
     </div>
     
     <!-- ? GitHub -->
     <div class="form-group col-12">
       <label for="inputGithub">Github *</label>
-      <input type="url" class="form-control" id="inputGitHub" placeholder="https://github.com/foobar">
+      <input type="url" class="form-control" id="inputGitHub" onchange="validateUrl(this.value); validateEmptyField(this.value)" placeholder="https://github.com/foobar">
     </div>    
   </div>
   
@@ -160,25 +162,25 @@
 
   <!-- ? More button -->
   <div class="blue-button-container">
-    <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-plus"></i><p>More</p><i class="fa-solid fa-angle-right"></i></button>
+    <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-plus" onclick="addCertificate(event)"></i><p>More</p><i class="fa-solid fa-angle-right"></i></button>
   </div>
 
   <!-- ? Team name -->
   <div class="form-group col-12">
     <label for="inputTeamName">Team Name *</label>
-    <input type="url" class="form-control" id="inputTeamName" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+    <input type="url" class="form-control" id="inputTeamName" onchange="validateEmptyField(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
   </div>
 
   <!-- ? Institution -->
   <div class="form-group col-12">
     <label for="inputInstitution">Institution *</label>
-    <input type="url" class="form-control" id="inputInstitution" placeholder="Universidade Federal da Paraíba">
+    <input type="url" class="form-control" id="inputInstitution" onchange="validateFullName(this.value); validateEmptyField(this.value)" placeholder="Universidade Federal da Paraíba">
   </div>
 
   <!-- ? Graduation -->
   <div class="form-group col-12">
     <label for="inputGraduation">Graduation *</label>
-    <input type="url" class="form-control" id="inputGraduation" placeholder="Universidade Federal da Paraíba">
+    <input type="url" class="form-control" id="inputGraduation" onchange="validateFullName(this.value); validateEmptyField(this.value)" placeholder="Ciências da Computação">
   </div>
   
   <!-- ? Finish button -->
@@ -199,6 +201,9 @@
 
 <!-- JavaScript Scripts -->
 <script src="./js/validation.js"></script> <!-- ? This file must come first in order for the functions to be called in before their call is loaded -->
+<script src="./js/navigation.js"></script>
+<script src="./js/phone-number.js"></script>
+<script src="./js/calculate-age.js"></script>
 <script src="./js/index.js"></script>
 </body>
 </html>
