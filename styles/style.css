@@ -14,7 +14,6 @@ form {
 }
 form .birthdayTitle {
   font-size: 1.125rem;
-  color: #767676;
   padding-top: 2.125rem;
 }
 form .form-group {
@@ -22,18 +21,18 @@ form .form-group {
 }
 form .form-group label {
   font-size: 0.875rem;
-  color: #767676;
+  color: #787878;
   margin-bottom: 0.25rem;
 }
 form .form-group .form-control {
   font-size: 1rem;
-  color: #767676;
+  color: #787878;
   border: 2px solid #AAAAAA;
   position: relative;
 }
 form .form-group .form-select {
   font-size: 1rem;
-  color: #767676;
+  color: #787878;
   border: 2px solid #AAAAAA;
 }
 form .form-group .form-check-input {
@@ -47,20 +46,6 @@ form .form-group .form-check-label {
   color: #111111;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-form .form-group--certificates {
-  position: relative;
-}
-form .form-group--certificates .form-group--favorite {
-  position: absolute;
-  right: 0.75rem;
-  top: 3rem;
-}
-form .form-group--certificates .form-group--favorite i {
-  width: 1.25rem;
-  height: 1.25rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: white;
-}
 form .blue-button-container {
   margin-top: 1.313rem;
   text-align: right;
@@ -69,7 +54,6 @@ form .blue-button-container {
 }
 form .blue-button-container .blue-button {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 

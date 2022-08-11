@@ -14,6 +14,15 @@ function validateUrl(url) {
   }
 }
 
+function addLines() {
+    var certificateContainer = document.getElementById('form-certificates');
+
+    var newDiv = document.createElement('div');
+    newDiv.innerHTML = '<input type="url" class="form-control" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"><div class="form-group--favorite"><i class="fa-regular fa-heart"></i></div>';
+
+    certificateContainer.appendChild(newDiv);
+}
+
 function addCertificate(event) {
     event.preventDefault();
     addLines();
@@ -22,13 +31,4 @@ function addCertificate(event) {
     console.log(teste);
     
 
-}
-
-function addLines() {
-    var certificateContainer = document.getElementById('form-group--certificates');
-
-    var div = document.createElement('div');
-    div.innerHTML = '<input type="url" class="form-control" id="inputTeamName" onchange="validateEmptyField(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">'
-
-    certificateContainer.appendChild(div);
 }

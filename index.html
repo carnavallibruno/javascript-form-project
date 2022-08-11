@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="./styles/style.css">
   <title>Team Project</title>
 </head>
-<script src="./js/birthday-dropdown.js" defer></script>
+<script src="./js/birthday.js" defer></script>
 
 <body onload="dateOfBirth()">
   <header>
     
     <!-- ? Title  -->
-    <h4 class="form-title">Team Sign Up</h4>
+    <h4 class="form-title">Team Sign Up</h4>      
     
     <!-- ? Navbar -->
     <ul class="nav d-flex">
@@ -113,7 +113,9 @@
 
     <!-- ? Next button (Basic page) -->
     <div class="blue-button-container">
-      <button type="submit" class="next-button-basic btn btn-primary blue-button"><p class="">Next</p><i class="fa-solid fa-angle-right"></i></button>
+      <button type="submit" class="btn btn-primary next-button-basic blue-button">
+        <p>Next</p><i class="fa-solid fa-angle-right"></i>
+      </button>
     </div>
   </div>
 </form>
@@ -152,17 +154,17 @@
 <form class="third-tab d-none">
 
   <!-- ? Certificates -->
-  <div class="form-group col-12 form-group--certificates">
+  <div id="form-certificates" class="form-group col-12 form-group--certificates">
       <label for="inputCertificates">Certificates</label>
-      <input type="url" class="form-control" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-      <div class="form-group--favorite">
+      <input type="url" class="form-control form-control--certificate" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+      <!-- <div class="form-group--favorite">
         <i class="fa-regular fa-heart"></i>
-      </div>
+      </div> -->
   </div>
 
   <!-- ? More button -->
   <div class="blue-button-container">
-    <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-plus" onclick="addCertificate(event)"></i><p>More</p><i class="fa-solid fa-angle-right"></i></button>
+    <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button"><i class="fa-solid fa-plus"></i><p>More</p><i class="fa-solid fa-angle-right"></i></button>
   </div>
 
   <!-- ? Team name -->
