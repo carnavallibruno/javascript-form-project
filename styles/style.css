@@ -63,6 +63,15 @@ form .form-group .heart-button i {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid red;
 }
+form .form-group .invalid {
+  border-color: #f7385b;
+}
+form .form-group .hidden {
+  display: none;
+}
+form .form-group .error-messages {
+  font-size: 1rem;
+}
 form .blue-button-container {
   margin-top: 1.313rem;
   text-align: right;

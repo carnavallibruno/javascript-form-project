@@ -1,21 +1,39 @@
-// var arrayValidation = [{id: name, status: false}, {id: email, status: false}, {id: birthday, status: false}, {id: checkbox, status: false}];
+var firstForm = [0, 0, 0, 0];
+
+// function teste () {}
+
 
 // ? Validation for the name
 function validateFullName(name) {
+  
+  var nameFieldInput = document.querySelector("#inputName");
+
+  var nameFieldErrorMessage = document.querySelector(".nameFieldErrorMessage");
+
   var regExName = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
   var matchName = regExName.test(name);
+  var nameValidator = firstForm[0];
 
   if (matchName) {
-    console.log("nome correto");
-    arrayValidation[0].push({status: true});
+    nameFieldInput.classList.remove("invalid");
+    nameFieldErrorMessage.classList.add("hidden");
+    nameValidator = 1;
     return true;
   }
+  
   else {
-    console.log("Nome incorreto");
+    nameFieldInput.classList.add("invalid");
+    nameFieldErrorMessage.classList.remove("hidden");
+    nameValidator = 0;
     return false;
   }
 }
 
+// function myFunc() {
+//   var myBtn = document.createElement("button");
+//   myBtn.innerHTML = "New Button";
+//   document.body.appendChild(myBtn);
+//   }
 
 // ? Validation for the email
 function validateEmail(email) {
@@ -46,6 +64,13 @@ function validateNumber(number) {
     return false;
   }
 }
+
+// // * Checkbox validation
+// var checkButton = document.querySelector("#gridCheck");
+// checkButton.addEventListener("change", validateTermsAndPrivacy);
+
+
+
 
 
 // ? Validation for URLs
@@ -89,14 +114,16 @@ function validateTermsAndPrivacy() {
   }
 }
 
+console.log()
+
 // ? Event listeners
 
-// * Checkbox validation
-var checkButton = document.querySelector("#gridCheck");
-checkButton.addEventListener("change", validateTermsAndPrivacy);
+// // * Checkbox validation
+// var checkButton = document.querySelector("#gridCheck");
+// checkButton.addEventListener("change", validateTermsAndPrivacy());
 
-
-// var allTrue = arrayValidation.every(obj => obj.status === true)
-// if(allTrue) {
+// console.log(formArray);
+// console.log(validatingArray);
+// if(validatingArray == formArray) {
 //   console.log('Todos os itens do formulario estao preenchidos');
 // }

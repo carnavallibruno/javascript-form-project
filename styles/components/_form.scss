@@ -53,6 +53,16 @@ form {
         border: 1px solid red;
       }
     }
+    .invalid {
+      border-color: $error-color;
+    }
+    .hidden {
+      display: none;
+    }
+    .error-messages {
+      font-size: 10rem;
+      color: $error-color;
+    }
   }
   
   .blue-button-container {

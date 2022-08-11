@@ -13,6 +13,7 @@
 </head>
 <script src="./js/birthday.js" defer></script>
 
+
 <body onload="dateOfBirth()">
   <header>
     
@@ -35,12 +36,13 @@
   
   
   <!-- ? Form 1 (Basic) -->
-  <form class="first-tab d-flex flex-column">
+  <form name="first" class="first-tab d-flex flex-column" onsubmit="return teste()">
     
     <!-- ? Full Name -->
-    <div class="form-group col-12 fullNameField">
+    <div class="form-group col-12">
       <label for="inputFullName">Full Name *</label>
-      <input type="name" class="form-control" onchange="validateFullName(this.value); validateEmptyField(this.value)" id="inputFullName" placeholder="Foo Bar">
+      <input type="name" class="form-control fullNameInput" onchange="validateFullName(this.value); validateEmptyField(this.value)" id="inputName" placeholder="Foo Bar">
+      <p class="nameFieldErrorMessage error-messages hidden">Invalid name!</p>
     </div>
 
     <!-- ? Nickname -->
@@ -54,12 +56,14 @@
       <div class="form-group col-12 col-sm-7 emailField">
         <label for="inputEmail">Email *</label>
         <input type="text" class="form-control" onchange="validateEmail(this.value); validateEmptyField(this.value)" id="inputEmail" placeholder="foo@bar.com">
+        <p class="emailFieldErrorMessage error-messages hidden">Invalid email!</p>
       </div>
 
       <!-- ? Phone number -->
       <div class="form-group col-12 col-sm-4 phoneField">
         <label for="inputPhone">Phone</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="(83) 00000-0000" onchange="validateNumber(this.value); phoneMask(this.value)"> 
+        <input type="text" class="form-control" id="inputPhone" placeholder="(83) 00000-0000" onchange="validateNumber(this.value); phoneMask(this.value)">
+        <p class="phoneFieldErrorMessage error-messages hidden">Invalid phone number!</p>
       </div>
     </div>
     
@@ -75,6 +79,8 @@
         <select class="form-select" id="selectDay" onchange="ageValue(this.value); validateEmptyField(this.value)" aria-label="Default select example">
           <option class="dayOption" value="0">Day</option>
         </select>
+      <p class="phoneFieldErrorMessage error-messages hidden">Invalid phone number!</p>
+
       </div>
       
       <!-- * Month -->
@@ -99,6 +105,7 @@
         <input disabled type="text" class="form-control" id="formAge" placeholder="Age">
       </div>
     </div>
+
   </div>
   
   
@@ -165,8 +172,8 @@
 
   <!-- ? Less button -->
   <div class="d-flex justify-content-end">
-    <div class="d-none blue-button-container me-4">
-      <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fas fa-minus"></i><p class="button-more-margin">Less</p></i></button>
+    <div id="less-button" class="d-none blue-button-container me-4">
+      <button type="submit" onclick="removeCertificate(event)" class="btn btn-primary blue-button"><i class="fas fa-minus"></i><p class="button-more-margin">Less</p></i></button>
     </div>
 
 
