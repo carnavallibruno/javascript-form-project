@@ -3,7 +3,7 @@
 // ? Function that creates the day dropdown
 var dayInput = document.getElementById('selectDay');
 function createDayDropdown(){
-  for(var i = 01; i <= 31; i++) {
+  for(var i = 1; i <= 31; i++) {
     var dayOption = document.createElement("option");
     dayOption.value = i;
     dayOption.innerHTML = i;
@@ -25,7 +25,7 @@ function createMonthDropdown () {
 // ? Function that creates the years dropdown
 var yearInput = document.getElementById('selectYear');
 function createYearDropdown () {
-  for (var i = 1950; i <= 2007; i++) {
+  for (var i = 2007; i >= 1950; i--) {
     var yearOption = document.createElement("option");
     yearOption.value = i;
     yearOption.innerHTML = i;

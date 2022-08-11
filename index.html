@@ -105,7 +105,7 @@
   <!-- ? Checkbox Terms and Privacy -->
   <div class="form-group pb-0">
     <div class="form-check d-flex align-items-center">
-      <input class="form-check-input mt-0" type="checkbox" id="gridCheck" checked>
+      <input class="form-check-input mt-0" type="checkbox" id="gridCheck">
       <label class="form-check-label m-0" for="gridCheck">
         I accept the terms and privacy
       </label>
@@ -114,7 +114,7 @@
     <!-- ? Next button (Basic page) -->
     <div class="blue-button-container">
       <button type="submit" class="btn btn-primary next-button-basic blue-button">
-        <p>Next</p><i class="fa-solid fa-angle-right"></i>
+        <p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i>
       </button>
     </div>
   </div>
@@ -142,7 +142,7 @@
   
   <!-- ? Next button (Social page) -->
   <div class="blue-button-container">
-    <button type="submit" class="next-button-social btn btn-primary blue-button"><p class="">Next</p><i class="fa-solid fa-angle-right"></i></button>
+    <button type="submit" class="next-button-social btn btn-primary blue-button"><p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i></button>
   </div>
 </div>
 </form>
@@ -156,15 +156,19 @@
   <!-- ? Certificates -->
   <div id="form-certificates" class="form-group col-12 form-group--certificates">
       <label for="inputCertificates">Certificates</label>
-      <input type="url" class="form-control form-control--certificate" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+        <input type="url" class="form-control form-control--certificates" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+        
+
       <!-- <div class="form-group--favorite">
         <i class="fa-regular fa-heart"></i>
       </div> -->
+
+    </div>
   </div>
 
   <!-- ? More button -->
   <div class="blue-button-container">
-    <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button"><i class="fa-solid fa-plus"></i><p>More</p><i class="fa-solid fa-angle-right"></i></button>
+    <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fa-solid fa-plus"></i><p class="button-more-margin">More</p><i class="fa-solid fa-angle-right"></i></button>
   </div>
 
   <!-- ? Team name -->
@@ -187,7 +191,7 @@
   
   <!-- ? Finish button -->
   <div class="blue-button-container">
-    <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-check"></i><p>Finish</p></button>
+    <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-check"></i><p class="button-finish-margin">Finish</pclass></button>
   </div>
 </form>
 
@@ -206,6 +210,7 @@
 <script src="./js/navigation.js"></script>
 <script src="./js/phone-number.js"></script>
 <script src="./js/calculate-age.js"></script>
+<script src="./js/certificates.js"></script>
 <script src="./js/index.js"></script>
 </body>
 </html>

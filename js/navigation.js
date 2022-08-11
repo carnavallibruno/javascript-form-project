@@ -9,7 +9,6 @@ var socialPage = document.querySelector(".second-tab");
 var certificatesPage = document.querySelector(".third-tab");
 
 // ? Next button variables
-
 var nextBasicButton = document.querySelector(".next-button-basic");
 var nextSocialButton = document.querySelector(".next-button-social");
 
@@ -45,8 +44,6 @@ function swapThirdPage () {
   socialPage.classList.add("d-none");
   certificatesPage.classList.remove("d-none");
 }
-
-
 
 
 // ? Swap page event listeners

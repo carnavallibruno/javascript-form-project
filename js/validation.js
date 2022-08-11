@@ -28,7 +28,22 @@ function validateEmail(email) {
   }
 }
 
-// ? Validation
+// ? Validation for URLs
+function validateUrl(url) {
+  var regExUrl = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+  
+  var matchUrl = regExUrl.test(url);
+
+  if (matchUrl) {
+    console.log(url);
+    return true;
+  }
+  else {
+    console.log("não");
+    return false;
+  }
+}
+
 // ? Validation in case the user attempts to submit an empty field
 function validateEmptyField(content) {
   if (content.length != 0) {
