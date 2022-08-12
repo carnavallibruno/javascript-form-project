@@ -19,6 +19,7 @@ function validateFullName(name) {
   else {
     nameFieldInput.classList.add("invalid");
     nameFieldErrorMessage.classList.remove("hidden");
+    firstForm[0] = 0;
     return false;
   }
 }

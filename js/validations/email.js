@@ -17,7 +17,7 @@ function validateEmail(email) {
   else {
     emailFieldInput.classList.add("invalid");
     emailFieldErrorMessage.classList.remove("hidden");
-    console.log("Email incorreto");
+    firstForm[1] = 0;
     return false;
   }
 }

@@ -1,25 +1,34 @@
 var firstForm = [0, 0, 0, 0];
-var secondForm = 0;
+var secondForm = [0];
 var thirdForm = [0, 0, 0];
 
+
+function toFirstPage(event) {
+  event.preventDefault();
+  if (!thirdForm.includes(0)) {
+    swapFirstPage();
+  } else {
+    console.log("funcionou, testa aí agora")
+    return;
+  }
+}
 
 function toSecondPage(event) {
   event.preventDefault();
   if (!firstForm.includes(0)) {
     swapSecondPage();
   } else {
-    swapFirstPage();
-    console.log('nao passa proxima pagina');
+    return;
   }
 }
 
 function toThirdPage(event) {
   event.preventDefault();
-  if (!secondForm == 0) {
+  if (!firstForm.includes(0) && !secondForm == 0) {
     swapThirdPage();
   } else {
-    swapFirstSecond();
-    console.log('nao passa proxima pagina');
+    console.log("funcionou, testa aí agora")
+    return;
   }
 }
 

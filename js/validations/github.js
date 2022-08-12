@@ -12,13 +12,13 @@ function validateGithubUrl(githubUrl) {
   if (matchGithubUrl) {
     githubFieldInput.classList.remove("invalid");
     githubFieldErrorMessage.classList.add("hidden");
-    secondForm = 1;
+    secondForm[0] = 1;
     return true;
   }
   else {
     githubFieldInput.classList.add("invalid");
     githubFieldErrorMessage.classList.remove("hidden");
-    console.log("não");
+    secondForm[0] = 0;
     return false;
   }
 }

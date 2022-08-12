@@ -19,6 +19,7 @@ function validateTeamName(teamName) {
   else {
     teamNameFieldInput.classList.add("invalid");
     teamNameFieldErrorMessage.classList.remove("hidden");
+    thirdForm[0] = 0;
     return false;
   }
 }

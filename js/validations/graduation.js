@@ -19,6 +19,7 @@ function validateGraduation(graduation) {
   else {
     graduationFieldInput.classList.add("invalid");
     graduationFieldErrorMessage.classList.remove("hidden");
+    thirdForm[1] = 0;
     return false;
   }
 }

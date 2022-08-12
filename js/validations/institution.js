@@ -19,6 +19,7 @@ function validateInstitutionName(institution) {
   else {
     institutionFieldInput.classList.add("invalid");
     institutionFieldErrorMessage.classList.remove("hidden");
+    thirdForm[2] = 0;
     return false;
   }
 }

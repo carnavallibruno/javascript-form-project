@@ -1,8 +1,20 @@
 // ? Birthday calculation
-var inputDay = document.getElementById('selectDay');
-var inputMonth = document.getElementById('selectMonth');
-var inputYear = document.getElementById('selectYear');
-var inputAge = document.getElementById('formAge');
+var inputDay = document.querySelector('#selectDay');
+var inputMonth = document.querySelector('#selectMonth');
+var inputYear = document.querySelector('#selectYear');
+var inputAge = document.querySelector('#formAge');
+
+// // ? Test field fill (IN DEVELOPMENT)
+// function testBirthdayField () {
+//     if (inputDay.textContent != 'Day' || inputMonth.textContent != 'Month' || inputYear.textContent != 'Year') {
+//         inputAge.textContent = '';
+//         console.log("caiu no if");
+//     } else {
+//         inputAge.value = null;
+//         console.log("a função não funcionou");
+//     }
+// }
+
 
 function ageValue (inputDate) {
     
@@ -10,7 +22,6 @@ function ageValue (inputDate) {
     var formMonth = inputMonth.value;
     var formDay = inputDay.value;
 
-    testBirthdayField();
     if(formMonth == 2 && formDay > 29) {
         inputAge.value = 'Age';
         console.log("Data de nascimento incorreta")
@@ -18,7 +29,6 @@ function ageValue (inputDate) {
     } else {
         var today = new Date();
         var birthDate = new Date(inputDate);
-        console.log(birthDate);
         var inputDate = formYear + "-" + formMonth + "-" + formDay;
         var finalAge = Math.floor((today - birthDate) / 31536000000);
         inputAge.value = finalAge;
@@ -26,13 +36,7 @@ function ageValue (inputDate) {
     }
 }
 
-// ? Test field fill (IN DEVELOPMENT)
-function testBirthdayField () {
-    if (inputDay.textContent != 'Day' && inputMonth.textContent != 'Month' && inputYear.textContent != 'Year') {
-        inputAge.value = finalAge;
-        console.log("a função funcionou");
-    } else {
-        inputAge.value = null;
-        console.log("a função não funcionou");
-    }
-}
+
+
+
+
