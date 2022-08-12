@@ -6,49 +6,52 @@ var lessButton = document.getElementById('less-button');
 var newFavIcon = document.getElementById('fill-heart');
 var favIcon = document.getElementById('regular-heart');
 
+var counter = 0;
 
 function addLines() {
-  var certificateContainer = document.getElementById('form-certificates');
-  var newDiv = document.createElement('div');
-  newDiv.id = "remove";
-  newDiv.classList.add("form-group--certificates", "d-flex", "mt-2");
-  
-  var newInput = document.createElement('input');
-  newInput.type = "url";
-  newInput.classList.add("form-control", "form-control--certificates");
-  newInput.id = inputCertificates;
-  newInput.placeholder = "https://www.linkedin.com/in/foo-bar-3a0560104/";
-  
-  var newButton = document.createElement('button');
-  newButton.classList.add("heart-button");
-  newButton.onclick = function() {
+
+    var certificateContainer = document.getElementById('form-certificates');
+    var newDiv = document.createElement('div');
+    newDiv.id = "remove";
+    newDiv.classList.add("form-group--certificates", "d-flex", "mt-2");
+    
+    var newInput = document.createElement('input');
+    newInput.type = "url";
+    newInput.classList.add("form-control", "form-control--certificates");
+    newInput.id = inputCertificates;
+    newInput.placeholder = "https://www.linkedin.com/in/foo-bar-3a0560104/";
+    
+    var newButton = document.createElement('button');
+    
+    newButton.id = "fav" + counter;
+    newButton.classList.add("heart-button", "d-flex");
+    newButton.onclick = function() {
     favoriteCertificate();
-  }
+      }
+    var newEdit = document.createElement('i');
+    newEdit.id = "edit";
+    newEdit.classList.add("fas", "fa-edit", "me-1", "align-self-center");
+    newEdit.classList.remove("d-none");
+    
+    var newFavIcon = document.createElement('i');
+    newFavIcon.id = "fill-heart";
+    newFavIcon.classList.add("d-none", "fas", "fa-heart", "me-1", "align-self-center");
+    
+    var newIcon = document.createElement('i');
+    newIcon.id = "regular-heart";
+    newIcon.classList.add("fa-regular", "fa-heart", "me-1", "align-self-center");
+    
+    newDiv.appendChild(newInput);
+    newDiv.appendChild(newButton);
+    newButton.appendChild(newEdit);
+    newButton.appendChild(newFavIcon);
+    newButton.appendChild(newIcon);
+    lessButton.classList.remove('d-none');
   
-  var newFavIcon = document.createElement('i');
-  newFavIcon.id = "fill-heart";
-  newFavIcon.classList.add("d-none", "fas", "fa-heart", "me-1");
-  
-  var newIcon = document.createElement('i');
-  newIcon.id = "regular-heart";
-  newIcon.classList.add("fa-regular", "fa-heart", "me-1");
-  
-  newDiv.appendChild(newInput);
-  newDiv.appendChild(newButton);
-  newButton.appendChild(newFavIcon);
-  newButton.appendChild(newIcon);
-
-  lessButton.classList.remove('d-none');
-  certificateContainer.appendChild(newDiv);
-
+    certificateContainer.appendChild(newDiv);
+    counter ++; 
 }
 
-// newDiv.innerHTML = '<div id="remove" class="form-group--certificates d-flex mt-2"><input type="url" class="form-control form-control--certificates" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"><button type="button" class="heart-button" onclick="favoriteCertificate(this)"><i id="fill-heart" class="d-none fas fa-heart me-1"></i><i  id="regular-heart" class="fa-regular fa-heart me-1"></i></button></div>';
-
-
-//     lessButton.classList.remove('d-none');
-//     certificateContainer.appendChild(newDiv);
-// }
 
 function removeLines() {
   var newLine = document.getElementById('remove');
@@ -87,6 +90,8 @@ function changeColor() {
   newFavIcon.classList.toggle('d-none');
   favIcon.classList.toggle('d-none');
 }
+
 function favoriteCertificate(event) {
+  var inputFields = document.querySelectorAll();
   changeColor();
 }

@@ -153,9 +153,12 @@
   </div>
   
   <!-- ? Next button (Social page) -->
+  <div class="form-group">
   <div class="blue-button-container">
     <button type="submit" class="next-button-social btn btn-primary blue-button"><p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i></button>
   </div>
+  <p class="buttonPageTwoFieldErrorMessage error-messages error-messages-button-next hidden">One or more fields are invalid</p>
+</div>
 </div>
 </form>
 
@@ -170,7 +173,7 @@
     <label for="inputCertificates">Certificates</label>
     <div class="form-group--certificates d-flex">
       <input type="url" class="form-control form-control--certificates" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-      <button type="button" class="heart-button" onclick="favoriteCertificate(this)"><i id="fill-heart" class="d-none fas fa-heart me-1"></i><i  id="regular-heart" class="fa-regular fa-heart me-1"></i></button>
+      <button type="button" class="d-flex heart-button" onclick="favoriteCertificate(this)"><i id="edit" class="d-none fas fa-edit me-1 align-self-center"></i><i id="fill-heart" class="d-none fas fa-heart me-1 align-self-center"></i><i  id="regular-heart" class="fa-regular fa-heart me-1 align-self-center"></i></button>
     </div>
   </div>
 </div>
@@ -206,16 +209,36 @@
 <!-- ? Graduation -->
 <div class="form-group col-12">
   <label for="inputGraduation">Graduation *</label>
-  <input type="url" id="inputGraduation" class="form-control"  onchange="validateGraduation(this.value); validateEmptyFieldPageThree(this.value)" placeholder="Ciências da Computação">
+  <input type="url" id="inputGraduation" class="form-control" onchange="validateGraduation(this.value); validateEmptyFieldPageThree(this.value)" placeholder="Ciências da Computação">
   <p class="graduationFieldErrorMessage error-messages hidden">You must include the course you are enrolled at</p>
 </div>
 
 <!-- ? Finish button -->
 <div class="blue-button-container">
-  <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-check"></i><p class="button-finish-margin">Finish</pclass></button>
+  <button type="submit" class="btn btn-primary blue-button"  data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="insertModalContent(event)"><i class="fa-solid fa-check"></i><p class="button-finish-margin">Finish</p></button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Team Info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
+</div>
 </form>
 
+
+<!-- ? Final info -->
 
 
 
@@ -245,5 +268,6 @@
 <script src="./js/index.js"></script>
 <script src="./js/navigation.js"></script>
 <script src="./js/validation.js"></script>
+<script src="./js/success-page.js"></script>
 </body>
 </html>

@@ -6,21 +6,21 @@ function store(){ //stores items in the localStorage
   var linkedin = document.getElementById('inputLinkedin').value;
   var github = document.getElementById('inputGithub').value;
   var teamName = document.getElementById('inputTeamName').value;
-  var key = document.getElementById('inputName').value; //gets the key from the user
+  var institution = document.getElementById('inputInstitution').value;
+  var graduation = document.getElementById('inputGraduation').value;
+  var key = document.getElementById('inputName').value;
 
-  const basic = {
+  var dataPages = {
       name: name,
       email: email,
       phone: phone,
       checkbox: checkbox,
       linkedin: linkedin,
       github: github,
-
+      teamName: teamName,
+      institution: institution,
+      graduation: graduation,
   }
 
-  window.localStorage.setItem(key, JSON.stringify(basic));  
-  //converting object to string
+  window.localStorage.setItem(key, JSON.stringify(dataPages));
 }
-
-document.getElementById('inputName').innerHTML = localStorage.getItem("name");
-document.getElementById('inputEmail').innerHTML = localStorage.getItem("email");
