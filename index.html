@@ -23,47 +23,47 @@
     <!-- ? Navbar -->
     <ul class="nav d-flex">
       <li class="nav-item col">
-        <button class="nav-button nav-button-basic nav-button-active" href="#">Basic</button>
+        <button onclick="swapFirstPage(event)" class="nav-button nav-button-basic nav-button-active" href="#">Basic</button>
       </li>
       <li class="nav-item col ">
-        <button class="nav-button nav-button-social" href="#">Social</button>
+        <button onclick="toSecondPage(event)" class="nav-button nav-button-social" href="#">Social</button>
       </li>
       <li class="nav-item col">
-        <button class="nav-button nav-button-certificates" href="#">Certificates</button>
+        <button onclick="toThirdPage(event)" class="nav-button nav-button-certificates" href="#">Certificates</button>
       </li>
     </ul>
   </header>
   
   
   <!-- ? Form 1 (Basic) -->
-  <form name="first" class="first-tab d-flex flex-column" onsubmit="return teste()">
+  <form name="first" id="first-form" class="first-tab d-flex flex-column" onsubmit="toSecondPage(event)">
     
     <!-- ? Full Name -->
     <div class="form-group col-12">
       <label for="inputFullName">Full Name *</label>
-      <input type="name" class="form-control fullNameInput" onchange="validateFullName(this.value); validateEmptyField(this.value)" id="inputName" placeholder="Foo Bar">
+      <input type="name" id="inputName" class="form-control fullNameInput" onchange="validateFullName(this.value); validateEmptyFieldPageOne(this.value)" placeholder="Foo Bar">
       <p class="nameFieldErrorMessage error-messages hidden">Invalid name!</p>
     </div>
-
+    
     <!-- ? Nickname -->
     <div class="form-group col-12">
       <label for="inputNickname">Nickname</label>
       <input type="name" class="form-control" id="inputNickname" placeholder="Juanito">
     </div>
-
+    
     <div class="row g-0 d-flex justify-content-between">
       <!-- ? Email -->
       <div class="form-group col-12 col-sm-7 emailField">
         <label for="inputEmail">Email *</label>
-        <input type="text" class="form-control" onchange="validateEmail(this.value); validateEmptyField(this.value)" id="inputEmail" placeholder="foo@bar.com">
+        <input type="text" id="inputEmail" class="form-control" onchange="validateEmail(this.value); validateEmptyFieldPageOne(this.value)"  placeholder="foo@bar.com">
         <p class="emailFieldErrorMessage error-messages hidden">Invalid email!</p>
       </div>
-
+      
       <!-- ? Phone number -->
       <div class="form-group col-12 col-sm-4 phoneField">
         <label for="inputPhone">Phone</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="(83) 00000-0000" onchange="validateNumber(this.value); phoneMask(this.value)">
-        <p class="phoneFieldErrorMessage error-messages hidden">Invalid phone number!</p>
+        <input type="text" id="inputPhone" class="form-control" placeholder="(83) 00000-0000" onchange="validateNumber(this.value); phoneMask(this.value)">
+        <p class="phoneFieldErrorMessage error-messages hidden">Invalid phone number</p>
       </div>
     </div>
     
@@ -76,17 +76,16 @@
       <div class="form-group col-12 col-sm-3 dayField">
         <!-- * Day -->
         <label for="selectDay">Day</label>
-        <select class="form-select" id="selectDay" onchange="ageValue(this.value); validateEmptyField(this.value)" aria-label="Default select example">
+        <select class="form-select" id="selectDay" onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)" aria-label="Default select example">
           <option class="dayOption" value="0">Day</option>
         </select>
-      <p class="phoneFieldErrorMessage error-messages hidden">Invalid phone number!</p>
-
+        <p class="birthdayFieldErrorMessage error-messages hidden">Invalid date</p>
       </div>
       
       <!-- * Month -->
       <div class="form-group col-12 col-sm-3 monthField">
         <label for="selectMonth">Month</label>
-        <select class="form-select" id="selectMonth" onchange="ageValue(this.value); validateEmptyField(this.value)" aria-label="Default select example">
+        <select class="form-select" id="selectMonth" onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)" aria-label="Default select example">
           <option value="0">Month</option>
         </select>
       </div>
@@ -94,7 +93,7 @@
       <!-- * Year -->
       <div class="form-group col-12 col-sm-3 yearField">
         <label for="selectYear">Year</label>
-        <select class="form-select" id="selectYear" onchange="ageValue(this.value); validateEmptyField(this.value)" aria-label="Default select example">
+        <select class="form-select" id="selectYear" onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)" aria-label="Default select example">
           <option value="0">Year</option>
         </select>
       </div>
@@ -105,25 +104,28 @@
         <input disabled type="text" class="form-control" id="formAge" placeholder="Age">
       </div>
     </div>
-
+    
   </div>
   
   
   <!-- ? Checkbox Terms and Privacy -->
   <div class="form-group pb-0">
     <div class="form-check d-flex align-items-center">
-      <input class="form-check-input mt-0" type="checkbox" id="gridCheck">
+      <input class="form-check-input mt-0" type="checkbox" id="gridCheck" onchange="validateCheckbox(this.value)">
       <label class="form-check-label m-0" for="gridCheck">
         I accept the terms and privacy
       </label>
     </div>
-
+    <p class="checkboxFieldErrorMessage error-messages hidden">You must agree to the terms and privacy.</p>
+  </div>
+  <div class="form-group pb-0">
     <!-- ? Next button (Basic page) -->
     <div class="blue-button-container">
       <button type="submit" class="btn btn-primary next-button-basic blue-button">
         <p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i>
       </button>
     </div>
+    <p class="buttonPageOneFieldErrorMessage error-messages error-messages-button-next hidden">One or more fields are invalid</p>
   </div>
 </form>
 
@@ -131,19 +133,22 @@
 
 
 <!-- ? Form 2 (Social) -->
-<form class="second-tab d-flex flex-column justify-content-between d-none">
+<form class="second-tab d-flex flex-column justify-content-between d-none" onsubmit="toThirdPage(event)">
   <div class="form-container">
     
     <!-- ? LinkedIn -->
     <div class="form-group col-12">
       <label for="inputLinkedin">LinkedIn</label>
-      <input type="url" class="form-control" id="inputLinkedin" onchange="validateUrl(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+      <input type="url" id="inputLinkedin" class="form-control" onchange="validateLinkedinUrl(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+      <p class="linkedinFieldErrorMessage error-messages hidden">Invalid Linkedin URL</p>
+      
     </div>
     
     <!-- ? GitHub -->
     <div class="form-group col-12">
       <label for="inputGithub">Github *</label>
-      <input type="url" class="form-control" id="inputGitHub" onchange="validateUrl(this.value); validateEmptyField(this.value)" placeholder="https://github.com/foobar">
+      <input type="url" id="inputGithub" class="form-control"  onchange="validateGithubUrl(this.value); validateEmptyFieldPageTwo(this.value)" placeholder="https://github.com/foobar">
+      <p class="githubFieldErrorMessage error-messages hidden">Invalid Github URL</p>
     </div>    
   </div>
   
@@ -159,51 +164,55 @@
 
 <!-- ? Form 3 (Certificates) -->
 <form class="third-tab d-none">
-
+  
   <!-- ? Certificates -->
   <div id="form-certificates" class="form-group col-12">
-      <label for="inputCertificates">Certificates</label>
-      <div class="form-group--certificates d-flex">
-        <input type="url" class="form-control form-control--certificates" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-        <button type="button" class="heart-button"><i class="fa-regular fa-heart heart-button-margin"></i></button>
-      </div>
+    <label for="inputCertificates">Certificates</label>
+    <div class="form-group--certificates d-flex">
+      <input type="url" class="form-control form-control--certificates" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+      <button type="button" class="heart-button" onclick=""><i class="d-none fas fa-heart"></i><i class="fa-regular fa-heart heart-button-margin"></i></button>
     </div>
   </div>
+</div>
 
-  <!-- ? Less button -->
-  <div class="d-flex justify-content-end">
-    <div id="less-button" class="d-none blue-button-container me-4">
-      <button type="submit" onclick="removeCertificate(event)" class="btn btn-primary blue-button"><i class="fas fa-minus"></i><p class="button-more-margin">Less</p></i></button>
-    </div>
-
-
-    <!-- ? More button -->
-    <div class="blue-button-container">
-      <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fa-solid fa-plus"></i><p class="button-more-margin">More</p><i class="fa-solid fa-angle-right"></i></button>
-    </div>
-  </div>
-
-  <!-- ? Team name -->
-  <div class="form-group col-12">
-    <label for="inputTeamName">Team Name *</label>
-    <input type="url" class="form-control" id="inputTeamName" onchange="validateEmptyField(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-  </div>
-
-  <!-- ? Institution -->
-  <div class="form-group col-12">
-    <label for="inputInstitution">Institution *</label>
-    <input type="url" class="form-control" id="inputInstitution" onchange="validateFullName(this.value); validateEmptyField(this.value)" placeholder="Universidade Federal da Paraíba">
-  </div>
-
-  <!-- ? Graduation -->
-  <div class="form-group col-12">
-    <label for="inputGraduation">Graduation *</label>
-    <input type="url" class="form-control" id="inputGraduation" onchange="validateFullName(this.value); validateEmptyField(this.value)" placeholder="Ciências da Computação">
+<!-- ? Less button -->
+<div class="d-flex justify-content-end">
+  <div id="less-button" class="d-none blue-button-container me-4">
+    <button type="submit" onclick="removeCertificate(event)" class="btn btn-primary blue-button"><i class="fas fa-minus"></i><p class="button-more-margin">Less</p></i></button>
   </div>
   
-  <!-- ? Finish button -->
+  
+  <!-- ? More button -->
   <div class="blue-button-container">
-    <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-check"></i><p class="button-finish-margin">Finish</pclass></button>
+    <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fa-solid fa-plus"></i><p class="button-more-margin">More</p><i class="fa-solid fa-angle-right"></i></button>
+  </div>
+</div>
+
+<!-- ? Team name -->
+<div class="form-group col-12">
+  <label for="inputTeamName">Team Name *</label>
+  <input type="url" id="inputTeamName" class="form-control"  onchange="validateEmptyFieldPageThree(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+  <p class="teamNameFieldErrorMessage error-messages hidden">Your team must contain a name</p>
+  
+</div>
+
+<!-- ? Institution -->
+<div class="form-group col-12">
+  <label for="inputInstitution">Institution *</label>
+  <input type="url" id="inputInstitution" class="form-control"  onchange="validateInstitutionName(this.value);validateEmptyFieldPageThree(this.value)" placeholder="Universidade Federal da Paraíba">
+  <p class="institutionFieldErrorMessage error-messages hidden">Invalid institution name</p>
+</div>
+
+<!-- ? Graduation -->
+<div class="form-group col-12">
+  <label for="inputGraduation">Graduation *</label>
+  <input type="url" id="inputGraduation" class="form-control"  onchange="validateGraduation(this.value); validateEmptyFieldPageThree(this.value)" placeholder="Ciências da Computação">
+  <p class="graduationFieldErrorMessage error-messages hidden">You must include the course you are enrolled at</p>
+</div>
+
+<!-- ? Finish button -->
+<div class="blue-button-container">
+  <button type="submit" class="btn btn-primary blue-button"><i class="fa-solid fa-check"></i><p class="button-finish-margin">Finish</pclass></button>
   </div>
 </form>
 
@@ -218,11 +227,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 <!-- JavaScript Scripts -->
-<script src="./js/validation.js"></script> <!-- ? This file must come first in order for the functions to be called in before their call is loaded -->
-<script src="./js/navigation.js"></script>
-<script src="./js/phone-number.js"></script>
+<script src="./js/validations/checkbox.js"></script>
+<script src="./js/validations/email.js"></script>
+<script src="./js/validations/empty-field-first-page.js"></script>
+<script src="./js/validations/empty-field-second-page.js"></script>
+<script src="./js/validations/empty-field-third-page.js"></script>
+<script src="./js/validations/full-name.js"></script>
+<script src="./js/validations/github.js"></script>
+<script src="./js/validations/graduation.js"></script>
+<script src="./js/validations/institution.js"></script>
+<script src="./js/validations/linkedin.js"></script>
+<script src="./js/validations/phone-mask.js"></script>
+<script src="./js/validations/url.js"></script>
+
 <script src="./js/calculate-age.js"></script>
 <script src="./js/certificates.js"></script>
 <script src="./js/index.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/validation.js"></script>
 </body>
 </html>

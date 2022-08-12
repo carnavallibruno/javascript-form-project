@@ -4,70 +4,29 @@ var inputMonth = document.getElementById('selectMonth');
 var inputYear = document.getElementById('selectYear');
 var inputAge = document.getElementById('formAge');
 
-// function newFunction() {
-//     document.getElementById("selectDay").reset();
-//  }
-
 function ageValue (inputDate) {
     
     var formYear = inputYear.value;
     var formMonth = inputMonth.value;
     var formDay = inputDay.value;
 
-    var today = new Date();
-    var birthDate = new Date(inputDate);
-    var inputDate = formYear + "-" + formMonth + "-" + formDay;
-
+    testBirthdayField();
     if(formMonth == 2 && formDay > 29) {
         inputAge.value = 'Age';
         console.log("Data de nascimento incorreta")
         // return inputAge;
     } else {
+        var today = new Date();
+        var birthDate = new Date(inputDate);
+        console.log(birthDate);
+        var inputDate = formYear + "-" + formMonth + "-" + formDay;
         var finalAge = Math.floor((today - birthDate) / 31536000000);
         inputAge.value = finalAge;
+        firstForm[2] = 1;
     }
 }
 
-// ? Formula Gabriel
-
-    // var formYear = inputYear.value;
-    // var formMonth = inputMonth.value;
-    // var formDay = inputDay.value;
-
-    // var inputDate = formYear + "-" + formMonth + "-" + formDay;
-    // var today = new Date();
-    // var birthDate = new Date(inputDate);
-
-    // var age = today.getFullYear() - birthDate.getFullYear();
-    // var m = today.getMonth() - birthDate.getMonth();
-    // if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    //     age--;
-    // }
-    // inputAge.value = age;
-    // return age;
-
-    // if(formMonth == 2 && formDay > 29) {
-    //     inputAge.value = 'Age';
-    //     console.log("Data de nascimento incorreta")
-    //     // return inputAge;
-    // } else {
-    //     var finalAge = Math.floor((today - birthdate) / 31536000000);
-    //     inputAge.value = finalAge;
-    // }
-// }
-
-// function ageValue(dateString) {
-//     var today = new Date();
-//     var birthDate = new Date(dateString);
-//     inputAge = today.getFullYear() - birthDate.getFullYear();
-//     var m = today.getMonth() - birthDate.getMonth();
-//     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-//         age--;
-//     }
-//     return inputAge;
-// }
-
-// ? Test field fill
+// ? Test field fill (IN DEVELOPMENT)
 function testBirthdayField () {
     if (inputDay.textContent != 'Day' && inputMonth.textContent != 'Month' && inputYear.textContent != 'Year') {
         inputAge.value = finalAge;
@@ -77,5 +36,3 @@ function testBirthdayField () {
         console.log("a função não funcionou");
     }
 }
-
-// console.log(inputDay.textContent)

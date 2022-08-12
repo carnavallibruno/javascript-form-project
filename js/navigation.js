@@ -46,41 +46,41 @@ function swapThirdPage () {
 }
 
 
-// ? Swap page event listeners
+// // ? Swap page event listeners
 
-// * Page 1
-basicButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapFirstPage();
-});
+// // * Page 1
+// basicButton.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   swapFirstPage();
+// });
 
-// * Page 2
-socialButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapSecondPage();
-});
+// // * Page 2
+// socialButton.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   swapSecondPage();
+// });
 
-// * Page 3
-certificatesButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapThirdPage();
-});
+// // * Page 3
+// certificatesButton.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   swapThirdPage();
+// });
 
 
 
-// ? Swap page event listeners (next button)
+// // ? Swap page event listeners (next button)
 
-// * Next button (Basic page)
-nextBasicButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapSecondPage();
-});
+// // * Next button (Basic page)
+// // nextBasicButton.addEventListener("click", (event) => {
+// //   event.preventDefault();
+// //   swapSecondPage();
+// // });
 
-// * Next button (Social page)
-nextSocialButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  swapThirdPage();
-});
+// // * Next button (Social page)
+// nextSocialButton.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   swapThirdPage();
+// });
 
 
 

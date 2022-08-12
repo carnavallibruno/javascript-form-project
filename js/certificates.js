@@ -3,6 +3,7 @@ var minFields = 1;
 var maxFields = 5;
 var moreButton = document.getElementById('more-button');
 var lessButton = document.getElementById('less-button');
+var favIcon = document.getElementById('heart-button');
 
 
 function addLines() {
@@ -47,4 +48,8 @@ function removeCertificate(event) {
     console.log('You cannot remove all the certificate inputs');
   }  
   return fields;
+}
+
+function favoriteCertificate(event) {
+
 }

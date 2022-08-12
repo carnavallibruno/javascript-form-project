@@ -1,4 +1,4 @@
-// ? Functions used to create the dropdowns
+// ? This file contains the functions used to create the dropdowns
 
 // ? Function that creates the day dropdown
 var dayInput = document.getElementById('selectDay');
@@ -33,7 +33,7 @@ function createYearDropdown () {
   }
 }
 
-// ? Functions that calls all three dropdowns
+// ? Functions that calls all three dropdowns onload
 function dateOfBirth () {
   createDayDropdown();
   createMonthDropdown();
