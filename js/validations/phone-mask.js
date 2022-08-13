@@ -10,7 +10,6 @@ function validateNumber(number) {
   if (matchNumber) {
     phoneFieldInput.classList.remove("invalid");
     phoneFieldErrorMessage.classList.add("hidden");
-    console.log(number);
     return true;
   }
   else {
@@ -39,5 +38,4 @@ function phoneMask(phone) {
   }
 
   inputPhone.value = maskedNumber;
-  console.log(maskedNumber);
 }

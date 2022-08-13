@@ -6,7 +6,7 @@ function createDayDropdown(){
   for(var i = 1; i <= 31; i++) {
     var dayOption = document.createElement("option");
     dayOption.value = i;
-    dayOption.innerHTML = i;
+    dayOption.textContent = i;
     dayInput.appendChild(dayOption);
   }
 }
@@ -17,7 +17,7 @@ function createMonthDropdown () {
   for (var i = 1; i <= 12; i++) {
     var monthOption = document.createElement("option");
     monthOption.value = i;
-    monthOption.innerHTML = i;
+    monthOption.textContent = i;
     monthInput.appendChild(monthOption);
   }
 }
@@ -28,7 +28,7 @@ function createYearDropdown () {
   for (var i = 2007; i >= 1950; i--) {
     var yearOption = document.createElement("option");
     yearOption.value = i;
-    yearOption.innerHTML = i;
+    yearOption.textContent = i;
     yearInput.appendChild(yearOption);
   }
 }

@@ -4,16 +4,15 @@ var inputMonth = document.querySelector('#selectMonth');
 var inputYear = document.querySelector('#selectYear');
 var inputAge = document.querySelector('#formAge');
 
-// // ? Test field fill (IN DEVELOPMENT)
-// function testBirthdayField () {
-//     if (inputDay.textContent != 'Day' || inputMonth.textContent != 'Month' || inputYear.textContent != 'Year') {
-//         inputAge.textContent = '';
-//         console.log("caiu no if");
-//     } else {
-//         inputAge.value = null;
-//         console.log("a função não funcionou");
-//     }
-// }
+// ? Test field fill (IN DEVELOPMENT)
+function testBirthdayField () {
+    if (inputDay.textContent == 'Day' || inputMonth.textContent == 'Month' || inputYear.textContent == 'Year') {
+        inputAge.textContent = '';
+        console.log("caiu no if");
+    } else {
+        console.log("a função não funcionou");
+    }
+}
 
 
 function ageValue (inputDate) {

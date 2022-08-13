@@ -26,7 +26,7 @@ function toSecondPage(event) {
 
 function toThirdPage(event) {
   event.preventDefault();
-  if (!firstForm.includes(0) && !secondForm == 0) {
+  if (!firstForm.includes(0) && !secondForm.includes(0)) {
     document.querySelector(".buttonPageTwoFieldErrorMessage").classList.add("hidden");
     swapThirdPage();
   } else {
