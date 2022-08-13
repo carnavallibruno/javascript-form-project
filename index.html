@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./styles/style.css">
   <title>Team Project</title>
 </head>
+<script src="https://unpkg.com/feather-icons"></script>
 <script src="./js/birthday.js" defer></script>
 
 
@@ -23,13 +24,16 @@
     <!-- ? Navbar -->
     <ul class="nav d-flex">
       <li class="nav-item col">
-        <button onclick="toFirstPage(event)" class="nav-button nav-button-basic nav-button-active" href="#">Basic</button>
+        <!-- <button onclick="toFirstPage(event)" class="nav-button nav-button-basic nav-button-active" href="#">Basic</button> -->
+        <button  onclick="swapFirstPage()" class="nav-button nav-button-basic nav-button-active" href="#">Basic</button>
       </li>
       <li class="nav-item col">
-        <button onclick="toSecondPage(event)" class="nav-button nav-button-social" href="#">Social</button>
+        <!-- <button onclick="toSecondPage(event)" class="nav-button nav-button-social" href="#">Social</button> -->
+        <button onclick="swapSecondPage()" class="nav-button nav-button-social" href="#">Social</button>
       </li>
       <li class="nav-item col">
-        <button onclick="toThirdPage(event)" class="nav-button nav-button-certificates" href="#">Certificates</button>
+        <!-- <button onclick="toThirdPage(event)" class="nav-button nav-button-certificates" href="#">Certificates</button> -->
+        <button onclick="swapThirdPage()" class="nav-button nav-button-certificates" href="#">Certificates</button>
       </li>
     </ul>
   </header>
@@ -246,17 +250,27 @@
   <div id="form-certificates" class="form-group col-12">
     <label for="inputCertificates">Certificates</label>
     <div class="form-group--certificates d-flex">
-      <input type="url" class="form-control form-control--certificates" id="inputCertificates" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-      <button type="button" class="d-flex heart-button" onclick="favoriteCertificate(this)"><i id="edit" class="d-none fas fa-edit me-1 align-self-center"></i><i id="fill-heart" class="d-none fas fa-heart me-1 align-self-center"></i><i  id="regular-heart" class="fa-regular fa-heart me-1 align-self-center"></i></button>
+      <input
+        type="url"
+        id="inputCertificates"
+        class="form-control form-control--certificates"
+        placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+      >
+      <button
+        type="button"
+        class="d-flex align-items-center certificate-buttons"
+      >
+      <i class="icone-heart" style="color: black; fill: white; opacity: 0.75;" data-feather="heart" onclick="changeColor(this)"></i>
+    </button>
     </div>
   </div>
 </div>
 
 <!-- ? Less button -->
-<div class="d-flex justify-content-end">
+<!-- <div class="d-flex justify-content-end">
   <div id="less-button" class="d-none blue-button-container me-4">
     <button type="submit" onclick="removeCertificate(event)" class="btn btn-primary blue-button "><i class="fas fa-minus"></i><p class="button-more-margin">Less</p></i></button>
-  </div>
+  </div> -->
   
   
   <!-- ? More button -->
@@ -323,6 +337,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 <!-- JavaScript Scripts -->
+<script>feather.replace()</script>
+
 <script src="./js/validations/checkbox.js"></script>
 <script src="./js/validations/email.js"></script>
 <script src="./js/validations/empty-field-first-page.js"></script>
@@ -344,5 +360,7 @@
 <script src="./js/navigation.js"></script>
 <script src="./js/success-page.js"></script>
 <script src="./js/validation.js"></script>
+
+
 </body>
 </html>
