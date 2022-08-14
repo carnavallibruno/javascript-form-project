@@ -1,5 +1,8 @@
-function store(){ //stores items in the localStorage
-  var name = document.getElementById('inputName').value;
+var dataPages;
+var key;
+
+function store(dataPages){ //stores items in the localStorage
+  var namee = document.getElementById('inputName').value;
   var email = document.getElementById('inputEmail').value;
   var phone = document.getElementById('inputPhone').value;
   var checkbox = document.getElementById('gridCheck').value;
@@ -8,10 +11,10 @@ function store(){ //stores items in the localStorage
   var teamName = document.getElementById('inputTeamName').value;
   var institution = document.getElementById('inputInstitution').value;
   var graduation = document.getElementById('inputGraduation').value;
-  var key = document.getElementById('inputName').value;
-
-  var dataPages = {
-      name: name,
+  key = "phoenix";
+  
+  dataPages = {
+      name: namee,
       email: email,
       phone: phone,
       checkbox: checkbox,
@@ -22,5 +25,16 @@ function store(){ //stores items in the localStorage
       graduation: graduation,
   }
 
-  window.localStorage.setItem(key, JSON.stringify(dataPages));
+  window.localStorage.setItem('phoenix', JSON.stringify(dataPages));
+
+}
+
+// function saveStorage(dataPages, key){
+//   window.localStorage.setItem(key, JSON.stringify(dataPages));
+// }
+
+function getStorage(){
+  return JSON.parse(window.localStorage.getItem('phoenix'));
+
+  // return dataPages
 }

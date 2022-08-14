@@ -207,6 +207,7 @@
         class="form-control"
         onchange="validateLinkedinUrl(this.value)"
         placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+        onchange="store()"
       >
       <p class="linkedinFieldErrorMessage error-messages hidden">Invalid Linkedin URL</p>
       
@@ -219,7 +220,7 @@
         type="text"
         id="inputGithub"
         class="form-control"
-        onchange="validateGithubUrl(this.value); validateEmptyFieldPageTwo(this.value)"
+        onchange="validateGithubUrl(this.value); validateEmptyFieldPageTwo(this.value); store()"
         placeholder="https://github.com/foobar"
       >
       <p class="githubFieldErrorMessage error-messages hidden">Invalid Github URL</p>
@@ -265,13 +266,6 @@
     </div>
   </div>
 </div>
-
-<!-- ? Less button -->
-<!-- <div class="d-flex justify-content-end">
-  <div id="less-button" class="d-none blue-button-container me-4">
-    <button type="submit" onclick="removeCertificate(event)" class="btn btn-primary blue-button "><i class="fas fa-minus"></i><p class="button-more-margin">Less</p></i></button>
-  </div> -->
-  
   
   <!-- ? More button -->
   <div class="blue-button-container">
@@ -282,7 +276,13 @@
 <!-- ? Team name -->
 <div class="form-group col-12">
   <label for="inputTeamName">Team Name *</label>
-  <input type="url" id="inputTeamName" class="form-control"  onchange="validateEmptyFieldPageThree(this.value)" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+  <input 
+    type="url" 
+    id="inputTeamName" 
+    class="form-control"
+    onchange="validateEmptyFieldPageThree(this.value); store()"
+    placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+  >
   <p class="teamNameFieldErrorMessage error-messages hidden">Your team must contain a name</p>
   
 </div>
@@ -290,14 +290,26 @@
 <!-- ? Institution -->
 <div class="form-group col-12">
   <label for="inputInstitution">Institution *</label>
-  <input type="url" id="inputInstitution" class="form-control"  onchange="validateInstitutionName(this.value);validateEmptyFieldPageThree(this.value)" placeholder="Universidade Federal da Paraíba">
+  <input 
+    type="url"
+    id="inputInstitution"
+    class="form-control"
+    onchange="validateInstitutionName(this.value);validateEmptyFieldPageThree(this.value); store()"
+    placeholder="Universidade Federal da Paraíba"
+  >
   <p class="institutionFieldErrorMessage error-messages hidden">Invalid institution name</p>
 </div>
 
 <!-- ? Graduation -->
 <div class="form-group col-12">
   <label for="inputGraduation">Graduation *</label>
-  <input type="url" id="inputGraduation" class="form-control"  placeholder="Ciências da Computação">
+  <input 
+    type="url"
+    id="inputGraduation"
+    class="form-control"
+    placeholder="Ciências da Computação"
+    onchange="store()"
+  >
   <p class="graduationFieldErrorMessage error-messages hidden">You must include the course you are enrolled at</p>
 </div>
 

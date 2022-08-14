@@ -49,6 +49,9 @@ form .form-group .form-control--certificates {
   border-right: none;
   border-radius: 5px 0px 0px 5px;
 }
+form .form-group .form-control--certificates:disabled {
+  background-color: #f6f6f6;
+}
 form .form-group .certificate-buttons {
   border: 2px solid #AAAAAA;
   border-radius: 0px 5px 5px 0px;
@@ -58,6 +61,9 @@ form .form-group .certificate-buttons {
 form .form-group .certificate-buttons i {
   font-size: 1rem;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+form .form-group .certificate-buttons:disabled {
+  background-color: #f6f6f6;
 }
 form .form-group .invalid {
   border-color: #f7385b;

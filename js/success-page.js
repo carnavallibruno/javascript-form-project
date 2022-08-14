@@ -9,7 +9,8 @@ function insertModalContent(event) {
 function addModal () {
     var finalMessage = document.getElementById("modal-body");
     var modalContent = document.createElement('div');
-
+    var localStorage = getStorage();
+    console.log(localStorage);
 
     finalMessage.appendChild(modalContent);
 
@@ -24,28 +25,27 @@ function addModal () {
     finalMessage.appendChild(breakLine);
 
     var basicName = document.createElement("h4")
-    basicName.innerHTML = "Name: " + inputName.value;
+    basicName.innerHTML = "Name: " + localStorage.name;
     finalMessage.appendChild(basicName);
 
     var basicNickname = document.createElement("h4");
-    basicNickname.innerHTML = "Nickname: " + inputNickname.value;
+    basicNickname.innerHTML = "Nickname: " + localStorage.nickname;
     finalMessage.appendChild(basicNickname);
 
     var basicEmail = document.createElement("h4");
-    basicEmail.innerHTML = "Email: " + inputEmail.value;
+    basicEmail.innerHTML = "Email: " + localStorage.email;
     finalMessage.appendChild(basicEmail);
 
     var basicPhone = document.createElement("h4");
-    basicPhone.innerHTML = "Phone: " + inputPhone.value;
+    basicPhone.innerHTML = "Phone: " + localStorage.phone;
     finalMessage.appendChild(basicPhone);
     
-    var birthdayInfo = document.createElement("h4");
-    birthdayInfo.innerHTML = "Age: " + formAge.value;
-    finalMessage.appendChild(birthdayInfo);
+    // var birthdayInfo = document.createElement("h4");
+    // birthdayInfo.innerHTML = "Age: " + localStorage.;
+    // finalMessage.appendChild(birthdayInfo);
 
     finalMessage.appendChild(breakLine);
 
-    
     var basicDivider = document.createElement("hr");
     finalMessage.appendChild(basicDivider);
 
@@ -56,14 +56,13 @@ function addModal () {
     finalMessage.appendChild(breakLine);
 
     var socialLinkedin = document.createElement("h4");
-    socialLinkedin.innerHTML = 'LinkedIn: ' + inputLinkedin.value;
+    socialLinkedin.innerHTML = 'LinkedIn: ' + localStorage.linkedin;
     finalMessage.appendChild(socialLinkedin);
     
     var socialGithub = document.createElement("h4");
-    socialGithub.innerHTML = 'Github: ' + inputGithub.value;
+    socialGithub.innerHTML = 'Github: ' + localStorage.github;
     finalMessage.appendChild(socialGithub);
     
-    var basicDivider = document.createElement("hr");
     finalMessage.appendChild(basicDivider);
 
     finalMessage.appendChild(breakLine);
@@ -75,26 +74,21 @@ function addModal () {
     finalMessage.appendChild(breakLine);
 
     var certificatesCertificates = document.createElement("h4");
-    certificatesCertificates.innerHTML = 'Certificados: ' + inputCertificates.value + inputCertificates0.value + '<br>' + inputCertificates1.value + '<br>' + inputCertificates2.value + '<br>' + inputCertificates3.value;
-    finalMessage.appendChild(certificatesCertificates);
+    certificatesCertificates.innerHTML = 'Certificados: ' + inputCertificates.value;
+    // + inputCertificates0.value + '<br>' + inputCertificates1.value + '<br>' + inputCertificates2.value + '<br>' + inputCertificates3.value;
+    // finalMessage.appendChild(certificatesCertificates);
 
     var certificatesTeamName = document.createElement("h4");
-    certificatesTeamName.innerHTML = 'Team Name: ' + inputTeamName.value;
+    certificatesTeamName.innerHTML = 'Team Name: ' + localStorage.teamName;
     finalMessage.appendChild(certificatesTeamName);
 
     var certificatesInstitution = document.createElement("h4");
-    certificatesInstitution.innerHTML = 'Institution: ' + inputInstitution.value;
+    certificatesInstitution.innerHTML = 'Institution: ' + localStorage.institution;
     finalMessage.appendChild(certificatesInstitution);
 
     var certificatesGraduation = document.createElement("h4");
-    certificatesGraduation.innerHTML = 'Graduation: ' + inputGraduation.value;
+    certificatesGraduation.innerHTML = 'Graduation: ' + localStorage.graduation;
     finalMessage.appendChild(certificatesGraduation);
 
     finalMessage.appendChild(breakLine);
 }
-
-function memberInfo (data) {{
-  var h4 = document.createElement("h4")
-  h4.textContent = data;
-  return h4
-}}
