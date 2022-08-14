@@ -43,7 +43,6 @@ function addModal () {
     birthdayInfo.innerHTML = "Age: " + formAge.value;
     finalMessage.appendChild(birthdayInfo);
 
-    var breakLine = document.createElement("br");
     finalMessage.appendChild(breakLine);
 
     
@@ -54,7 +53,6 @@ function addModal () {
     socialTitle.innerHTML = "SOCIAL";
     finalMessage.appendChild(socialTitle);
 
-    var breakLine = document.createElement("br");
     finalMessage.appendChild(breakLine);
 
     var socialLinkedin = document.createElement("h4");
@@ -68,19 +66,17 @@ function addModal () {
     var basicDivider = document.createElement("hr");
     finalMessage.appendChild(basicDivider);
 
-    var breakLine = document.createElement("br");
     finalMessage.appendChild(breakLine);
 
     var certificatesTitle = document.createElement("h4");
     certificatesTitle.innerHTML = "CERTIFICATES";
     finalMessage.appendChild(certificatesTitle);
 
-    var breakLine = document.createElement("br");
     finalMessage.appendChild(breakLine);
 
-    var certificatesCertificados = document.createElement("h4");
-    certificatesCertificados.innerHTML = 'Certificados: ' + inputCertificates.value;
-    finalMessage.appendChild(certificatesCertificados);
+    var certificatesCertificates = document.createElement("h4");
+    certificatesCertificates.innerHTML = 'Certificados: ' + inputCertificates.value + inputCertificates0.value + '<br>' + inputCertificates1.value + '<br>' + inputCertificates2.value + '<br>' + inputCertificates3.value;
+    finalMessage.appendChild(certificatesCertificates);
 
     var certificatesTeamName = document.createElement("h4");
     certificatesTeamName.innerHTML = 'Team Name: ' + inputTeamName.value;
@@ -94,7 +90,6 @@ function addModal () {
     certificatesGraduation.innerHTML = 'Graduation: ' + inputGraduation.value;
     finalMessage.appendChild(certificatesGraduation);
 
-    var breakLine = document.createElement("br");
     finalMessage.appendChild(breakLine);
 }
 
