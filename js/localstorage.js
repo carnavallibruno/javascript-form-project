@@ -1,12 +1,12 @@
 var dataPages;
 var key;
 
-function store(dataPages){ //stores items in the localStorage
+function store(dataPages){ // ? Stores items in the localStorage
   var namee = document.getElementById('inputName').value;
   var nickname = document.getElementById('inputNickname').value;
   var email = document.getElementById('inputEmail').value;
   var phone = document.getElementById('inputPhone').value;
-  var day = document.getElementById('selectDay').value;
+  // var day = document.getElementById('selectDay').value;
   // var month = document.getElementById('selectMonth').value;
   // var year = document.getElementById('selectYear').value;
   // var age = document.getElementById('inputAge').value;
@@ -24,8 +24,6 @@ function store(dataPages){ //stores items in the localStorage
       nickname: nickname,
       email: email,
       phone: phone,
-      // birthday: [day, month, year],  não funciona
-      // age: age,
       checkbox: checkbox,
       linkedin: linkedin,
       github: github,
@@ -39,17 +37,13 @@ function store(dataPages){ //stores items in the localStorage
 
 }
 
-// function saveStorage(dataPages, key){
-//   window.localStorage.setItem(key, JSON.stringify(dataPages));
-// }
-
 function getStorage(){
   return JSON.parse(window.localStorage.getItem('phoenix'));
-
-  // return dataPages
 }
 
 // ? Information Persistence
+
+// ? basic!!!
 
 function loadStorageName(tag) {
   let localStorage = getStorage();
@@ -57,7 +51,10 @@ function loadStorageName(tag) {
   let inputField = localStorage.name;
   console.log(localStorage.name);
 
-  if (inputField !== null) tag.value = localStorage.name;
+  if (inputField !== null) {
+    tag.value = localStorage.name;
+    firstForm[0] = 1;
+    }
 }
 
 function loadStorageNickname(tag) {
@@ -75,7 +72,10 @@ function loadStorageEmail(tag) {
   let inputField = localStorage.email;
   console.log(localStorage.email);
 
-  if (inputField !== null) tag.value = localStorage.email;
+  if (inputField !== null) {
+    tag.value = localStorage.email;
+    firstForm[1] = 1;
+  }
 }
 
 function loadStoragePhone(tag) {
@@ -92,9 +92,12 @@ function loadStorageCheckbox(tag) {
 
   let inputField = localStorage.checkbox;
   console.log(localStorage.checkbox);
+  firstForm[3] = 1;
 
-  if (inputField.checked == 'on') tag.value = localStorage.checkbox;//null nao funciona. qual parametro usar?
+  if (inputField.checked == 'on') tag.value = localStorage.checkbox;
 }
+
+// ? social!!!
 
 function loadStorageLinkedin(tag) {
   let localStorage = getStorage();
@@ -111,10 +114,13 @@ function loadStorageGithub(tag) {
   let inputField = localStorage.github;
   console.log(localStorage.github);
 
-  if (inputField !== null) tag.value = localStorage.github;
+  if (inputField !== null) {
+    tag.value = localStorage.github;
+    secondForm[0] = 1;
+  }
 }
 
-//certificates!!!
+// ? certificates!!!
 
 function loadStorageTeamName(tag) {
   let localStorage = getStorage();
@@ -122,7 +128,10 @@ function loadStorageTeamName(tag) {
   let inputField = localStorage.teamName;
   console.log(localStorage.teamName);
 
-  if (inputField !== null) tag.value = localStorage.teamName;
+  if (inputField !== null) {
+    tag.value = localStorage.teamName;
+    thirdForm[0] = 1;
+  }
 }
 
 function loadStorageInstitution(tag) {
@@ -131,9 +140,11 @@ function loadStorageInstitution(tag) {
   let inputField = localStorage.institution;
   console.log(localStorage.institution);
 
-  if (inputField !== null) tag.value = localStorage.institution;
+  if (inputField !== null) {
+    tag.value = localStorage.institution;
+    thirdForm[1] = 1;
+    }
 }
-
 
 function loadStorageGraduation(tag) {
   let localStorage = getStorage();
@@ -141,5 +152,21 @@ function loadStorageGraduation(tag) {
   let inputField = localStorage.graduation;
   console.log(localStorage.graduation);
 
-  if (inputField !== null) tag.value = localStorage.graduation;
+  if (inputField !== null) {
+    tag.value = localStorage.graduation;
+    thirdForm[2] = 1;
+  }
+}
+
+function pageReload() {
+  loadStorageName(nameFieldInput);
+  loadStorageNickname(nicknameFieldInput);
+  loadStorageEmail(emailFieldInput);
+  loadStoragePhone(phoneFieldInput);
+  loadStorageCheckbox(checkboxVariable);
+  loadStorageLinkedin(linkedinFieldInput);
+  loadStorageGithub(githubFieldInput);
+  loadStorageTeamName(teamNameFieldInput);
+  loadStorageInstitution(institutionFieldInput);
+  loadStorageGraduation(graduationFieldInput);
 }

@@ -1,5 +1,6 @@
 // ? Validation for the email
 var emailFieldInput = document.querySelector('#inputEmail');
+
 function validateEmail(email) {
 
   var emailFieldErrorMessage = document.querySelector('.emailFieldErrorMessage');

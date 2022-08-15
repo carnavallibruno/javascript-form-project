@@ -13,7 +13,6 @@ var nextBasicButton = document.querySelector(".next-button-basic");
 var nextSocialButton = document.querySelector(".next-button-social");
 
 
-
 // ? Swap page functions
 function swapFirstPage () {
   basicButton.classList.add("nav-button-active");
@@ -44,44 +43,3 @@ function swapThirdPage () {
   socialPage.classList.add("d-none");
   certificatesPage.classList.remove("d-none");
 }
-
-
-// // ? Swap page event listeners
-
-// // * Page 1
-// basicButton.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   swapFirstPage();
-// });
-
-// // * Page 2
-// socialButton.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   swapSecondPage();
-// });
-
-// // * Page 3
-// certificatesButton.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   swapThirdPage();
-// });
-
-
-
-// // ? Swap page event listeners (next button)
-
-// // * Next button (Basic page)
-// // nextBasicButton.addEventListener("click", (event) => {
-// //   event.preventDefault();
-// //   swapSecondPage();
-// // });
-
-// // * Next button (Social page)
-// nextSocialButton.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   swapThirdPage();
-// });
-
-
-
-

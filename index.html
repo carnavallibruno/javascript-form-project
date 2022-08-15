@@ -15,7 +15,8 @@
 <script src="./js/birthday.js" defer></script>
 
 
-<body onload="dateOfBirth(); loadStorageName(nameFieldInput); loadStorageNickname(nicknameFieldInput); loadStorageEmail(emailFieldInput); loadStoragePhone(phoneFieldInput); loadStorageCheckbox(checkboxVariable); loadStorageLinkedin(linkedinFieldInput); loadStorageGithub(githubFieldInput); loadStorageTeamName(teamNameFieldInput); loadStorageInstitution(institutionFieldInput); loadStorageGraduation(graduationFieldInput);">
+
+<body onload="dateOfBirth(); pageReload();">
   <header>
     
     <!-- ? Title  -->
@@ -24,33 +25,31 @@
     <!-- ? Navbar -->
     <ul class="nav d-flex">
       <li class="nav-item col">
-        <!-- <button onclick="toFirstPage(event)" class="nav-button nav-button-basic nav-button-active" href="#">Basic</button> -->
-        <button  onclick="swapFirstPage()" class="nav-button nav-button-basic nav-button-active" href="#">Basic</button>
+        <button onclick="toFirstPage(event)" class="nav-button nav-button-basic nav-button-active" href="#">Basic</button>
+
       </li>
       <li class="nav-item col">
-        <!-- <button onclick="toSecondPage(event)" class="nav-button nav-button-social" href="#">Social</button> -->
-        <button onclick="swapSecondPage()" class="nav-button nav-button-social" href="#">Social</button>
+        <button onclick="toSecondPage(event)" class="nav-button nav-button-social" href="#">Social</button>
       </li>
       <li class="nav-item col">
-        <!-- <button onclick="toThirdPage(event)" class="nav-button nav-button-certificates" href="#">Certificates</button> -->
-        <button onclick="swapThirdPage()" class="nav-button nav-button-certificates" href="#">Certificates</button>
+        <button onclick="toThirdPage(event)" class="nav-button nav-button-certificates" href="#">Certificates</button>
       </li>
     </ul>
   </header>
   
   
   <!-- ? Form 1 (Basic) -->
-  <form name="first" id="first-form" class="first-tab d-flex flex-column" onsubmit="toSecondPage(event)">
+  <form name="first" id="first-tab" class="first-tab d-flex flex-column" onsubmit="toSecondPage(event)">
     
     <!-- ? Full Name -->
     <div class="form-group col-12">
       <label for="inputName">Full Name *</label>
       <input 
-        type="name"
-        id="inputName"
-        class="form-control fullNameInput"
-        onchange="validateFullName(this.value); validateEmptyFieldPageOne(this.value); store()"
-        placeholder="Foo Bar"
+      type="name"
+      id="inputName"
+      class="form-control fullNameInput"
+      onchange="validateFullName(this.value); validateEmptyFieldPageOne(this.value); store()"
+      placeholder="Foo Bar"
       >
       <p class="nameFieldErrorMessage error-messages hidden">Invalid name!</p>
     </div>
@@ -59,11 +58,11 @@
     <div class="form-group col-12">
       <label for="inputNickname">Nickname</label>
       <input
-        type="name"
-        id="inputNickname"
-        class="form-control"
-        placeholder="Juanito"
-        onchange="store()"
+      type="name"
+      id="inputNickname"
+      class="form-control"
+      placeholder="Juanito"
+      onchange="store()"
       />
     </div>
     
@@ -72,11 +71,11 @@
       <div class="form-group col-12 col-sm-7 emailField">
         <label for="inputEmail">Email *</label>
         <input
-          type="text"
-          id="inputEmail"
-          class="form-control"
-          placeholder="foo@bar.com"
-          onchange="validateEmail(this.value); validateEmptyFieldPageOne(this.value); store()"
+        type="text"
+        id="inputEmail"
+        class="form-control"
+        placeholder="foo@bar.com"
+        onchange="validateEmail(this.value); validateEmptyFieldPageOne(this.value); store()"
         />
         <p class="emailFieldErrorMessage error-messages hidden">Invalid email!</p>
       </div>
@@ -85,11 +84,11 @@
       <div class="form-group col-12 col-sm-4 phoneField">
         <label for="inputPhone">Phone</label>
         <input
-          type="text"
-          id="inputPhone"
-          class="form-control"
-          placeholder="(83) 00000-0000"
-          onchange="validateNumber(this.value); phoneMask(this.value); store()"
+        type="text"
+        id="inputPhone"
+        class="form-control"
+        placeholder="(83) 00000-0000"
+        onchange="validateNumber(this.value); phoneMask(this.value); store()"
         />
         <p class="phoneFieldErrorMessage error-messages hidden">Invalid phone number</p>
       </div>
@@ -102,112 +101,112 @@
     </div>
     <div class="row g-0 d-flex justify-content-between">      
       <div class="form-group col-12 col-sm-3 dayField">
-
+        
         <!-- * Day -->
         <label for="selectDay">Day</label>
         <select
-          id="selectDay"
-          class="form-select"
-          onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)"
-          aria-label="Default select example"
+        id="selectDay"
+        class="form-select"
+        onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)"
+        aria-label="Default select example"
         >
-          <option class="dayOption" value="0">Day</option>
-        </select>
-        <p class="birthdayFieldErrorMessage error-messages hidden">Invalid date</p>
-      </div>
-      
-      <!-- * Month -->
-      <div class="form-group col-12 col-sm-3 monthField">
-        <label for="selectMonth">Month</label>
-        <select
-          id="selectMonth"
-          class="form-select"
-          onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)"
-          aria-label="Default select example"
-        >
-          <option value="0">Month</option>
-        </select>
-      </div>
-      
-      <!-- * Year -->
-      <div class="form-group col-12 col-sm-3 yearField">
-        <label for="selectYear">Year</label>
-        <select
-          id="selectYear"
-          class="form-select"
-          onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)"
-          aria-label="Default select example"
-        >
-          <option value="0">Year</option>
-        </select>
-      </div>
-      
-      <!-- * Age -->
-      <div class="form-group col-12 col-sm-2">
-        <label for="formAge">Age</label>
-        <input
-          disabled
-          type="text"
-          id="formAge"
-          class="form-control"
-          placeholder="Age"
-          onchange="validateAge()"
-        >
-        <p class="ageFieldErrorMessage error-messages hidden">Invalid age</p>
-      </div>
+        <option class="dayOption" value="0">Day</option>
+      </select>
+      <p class="birthdayFieldErrorMessage error-messages hidden">Invalid date</p>
     </div>
     
+    <!-- * Month -->
+    <div class="form-group col-12 col-sm-3 monthField">
+      <label for="selectMonth">Month</label>
+      <select
+      id="selectMonth"
+      class="form-select"
+      onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)"
+      aria-label="Default select example"
+      >
+      <option value="0">Month</option>
+    </select>
   </div>
   
-  
-  <!-- ? Checkbox Terms and Privacy -->
-  <div class="form-group pb-0">
-    <div class="form-check d-flex align-items-center">
-      <input
-        type="checkbox"
-        id="gridCheck"
-        class="form-check-input mt-0"
-        onchange="validateCheckbox(this.value)"
-      >
-      <label class="form-check-label m-0" for="gridCheck">
-        I accept the terms and privacy
-      </label>
-    </div>
-    <p class="checkboxFieldErrorMessage error-messages hidden">You must agree to the terms and privacy.</p>
-  </div>
+  <!-- * Year -->
+  <div class="form-group col-12 col-sm-3 yearField">
+    <label for="selectYear">Year</label>
+    <select
+    id="selectYear"
+    class="form-select"
+    onchange="ageValue(this.value); validateEmptyFieldPageOne(this.value)"
+    aria-label="Default select example"
+    >
+    <option value="0">Year</option>
+  </select>
+</div>
+
+<!-- * Age -->
+<div class="form-group col-12 col-sm-2">
+  <label for="formAge">Age</label>
+  <input
+  disabled
+  type="text"
+  id="formAge"
+  class="form-control"
+  placeholder="Age"
+  onchange="validateAge()"
+  >
+  <p class="ageFieldErrorMessage error-messages hidden">Invalid age</p>
+</div>
+</div>
+
+</div>
 
 
-  <div class="form-group pb-0">
-    <!-- ? Next button (Basic page) -->
-    <div class="blue-button-container">
-      <button
-        type="submit"
-        class="btn btn-primary next-button-basic blue-button"
-      >
-      <p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i>
-      </button>
-    </div>
-    <p class="buttonPageOneFieldErrorMessage error-messages error-messages-button-next hidden">One or more fields are invalid</p>
+<!-- ? Checkbox Terms and Privacy -->
+<div class="form-group pb-0">
+  <div class="form-check d-flex align-items-center">
+    <input
+    type="checkbox"
+    id="gridCheck"
+    class="form-check-input mt-0"
+    onchange="validateCheckbox(this.value)"
+    >
+    <label class="form-check-label m-0" for="gridCheck">
+      I accept the terms and privacy
+    </label>
   </div>
+  <p class="checkboxFieldErrorMessage error-messages hidden">You must agree to the terms and privacy.</p>
+</div>
+
+
+<div class="form-group pb-0">
+  <!-- ? Next button (Basic page) -->
+  <div class="blue-button-container">
+    <button
+    type="submit"
+    class="btn btn-primary next-button-basic blue-button"
+    >
+    <p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i>
+  </button>
+</div>
+<p class="buttonPageOneFieldErrorMessage error-messages error-messages-button-next hidden">One or more fields are invalid</p>
+</div>
 </form>
 
 
 
 
 <!-- ? Form 2 (Social) -->
-<form class="second-tab d-flex flex-column justify-content-between d-none" onsubmit="toThirdPage(event)">
+<form id="second-tab" class="second-tab d-flex flex-column justify-content-between d-none" onsubmit="toThirdPage(event)">
   <div class="form-container">
     
     <!-- ? LinkedIn -->
     <div class="form-group col-12">
       <label for="inputLinkedin">LinkedIn</label>
       <input
-        type="text"
-        id="inputLinkedin"
-        class="form-control"
-        onchange="validateLinkedinUrl(this.value)"
-        placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
-        onchange="store()"
+      type="text"
+      id="inputLinkedin"
+      class="form-control"
+      onchange="validateLinkedinUrl(this.value)"
+      placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+      onchange="store()"
       >
       <p class="linkedinFieldErrorMessage error-messages hidden">Invalid Linkedin URL</p>
       
@@ -215,13 +214,13 @@
     
     <!-- ? GitHub -->
     <div class="form-group col-12">
-      <label for="inputGithub">Github *</label>
+      <label for="inputGithub">GitHub *</label>
       <input
-        type="text"
-        id="inputGithub"
-        class="form-control"
-        onchange="validateGithubUrl(this.value); validateEmptyFieldPageTwo(this.value); store()"
-        placeholder="https://github.com/foobar"
+      type="text"
+      id="inputGithub"
+      class="form-control"
+      onchange="validateGithubUrl(this.value); validateEmptyFieldPageTwo(this.value); store()"
+      placeholder="https://github.com/foobar"
       >
       <p class="githubFieldErrorMessage error-messages hidden">Invalid Github URL</p>
     </div>    
@@ -229,15 +228,15 @@
   
   <!-- ? Next button (Social page) -->
   <div class="form-group">
-  <div class="blue-button-container">
-    <button
+    <div class="blue-button-container">
+      <button
       type="submit"
       class="btn btn-primary blue-button next-button-social"
-    >
-    <p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i></button>
+      >
+      <p class="button-next-margin">Next</p><i class="fa-solid fa-angle-right"></i></button>
+    </div>
+    <p class="buttonPageTwoFieldErrorMessage error-messages error-messages-button-next hidden">One or more fields are invalid</p>
   </div>
-  <p class="buttonPageTwoFieldErrorMessage error-messages error-messages-button-next hidden">One or more fields are invalid</p>
-</div>
 </div>
 </form>
 
@@ -245,44 +244,44 @@
 
 
 <!-- ? Form 3 (Certificates) -->
-<form class="third-tab d-none">
-  
+<form id="third-tab" class="third-tab d-none">
+  <!-- usar querySelectorAll. usar classe diferente mas id igual -->
   <!-- ? Certificates -->
   <div id="form-certificates" class="form-group col-12">
     <label for="inputCertificates">Certificates</label>
     <div class="form-group--certificates d-flex">
       <input
-        type="url"
-        id="inputCertificates"
-        class="form-control form-control--certificates"
-        placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
-        onchange="store()" 
+      type="url"
+      id="inputCertificates"
+      class="form-control form-control--certificates"
+      placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+      onchange="store()" 
       >
       <button
-        type="button"
-        class="d-flex align-items-center certificate-buttons"
+      type="button"
+      class="d-flex align-items-center certificate-buttons"
       >
       <i class="icone-heart" style="color: black; fill: white; opacity: 0.75;" data-feather="heart" onclick="changeColor(this)"></i>
     </button>
-    </div>
   </div>
 </div>
-  
-  <!-- ? More button -->
-  <div class="blue-button-container">
-    <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fa-solid fa-plus"></i><p class="button-more-margin">More</p><i class="fa-solid fa-angle-right"></i></button>
-  </div>
+</div>
+
+<!-- ? More button -->
+<div class="blue-button-container">
+  <button type="submit" onclick="addCertificate(event)" class="btn btn-primary blue-button more-button"><i class="fa-solid fa-plus"></i><p class="button-more-margin">More</p><i class="fa-solid fa-angle-right"></i></button>
+</div>
 </div>
 
 <!-- ? Team name -->
 <div class="form-group col-12">
   <label for="inputTeamName">Team Name *</label>
   <input 
-    type="url" 
-    id="inputTeamName" 
-    class="form-control"
-    onchange="validateEmptyFieldPageThree(this.value); store()"
-    placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+  type="text" 
+  id="inputTeamName" 
+  class="form-control"
+  onchange="validateEmptyFieldPageThree(this.value); store()"
+  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
   >
   <p class="teamNameFieldErrorMessage error-messages hidden">Your team must contain a name</p>
   
@@ -292,11 +291,11 @@
 <div class="form-group col-12">
   <label for="inputInstitution">Institution *</label>
   <input 
-    type="url"
-    id="inputInstitution"
-    class="form-control"
-    onchange="validateInstitutionName(this.value);validateEmptyFieldPageThree(this.value); store()"
-    placeholder="Universidade Federal da Paraíba"
+  type="text"
+  id="inputInstitution"
+  class="form-control"
+  onchange="validateInstitutionName(this.value);validateEmptyFieldPageThree(this.value); store()"
+  placeholder="Universidade Federal da Paraíba"
   >
   <p class="institutionFieldErrorMessage error-messages hidden">Invalid institution name</p>
 </div>
@@ -305,11 +304,11 @@
 <div class="form-group col-12">
   <label for="inputGraduation">Graduation *</label>
   <input 
-    type="url"
-    id="inputGraduation"
-    class="form-control"
-    placeholder="Ciências da Computação"
-    onchange="store()"
+  type="text"
+  id="inputGraduation"
+  class="form-control"
+  placeholder="Ciências da Computação"
+  onchange="store()"
   >
   <p class="graduationFieldErrorMessage error-messages hidden">You must include the course you are enrolled at</p>
 </div>
@@ -330,15 +329,12 @@
       <div class="modal-body" id="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetForm(); swapFirstPage()">Close</button>
       </div>
     </div>
   </div>
 </div>
 </form>
-
-
-<!-- ? Final info -->
 
 
 
