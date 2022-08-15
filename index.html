@@ -15,7 +15,7 @@
 <script src="./js/birthday.js" defer></script>
 
 
-<body onload="dateOfBirth()">
+<body onload="dateOfBirth(); loadStorageName(nameFieldInput); loadStorageNickname(nicknameFieldInput); loadStorageEmail(emailFieldInput); loadStoragePhone(phoneFieldInput); loadStorageCheckbox(checkboxVariable); loadStorageLinkedin(linkedinFieldInput); loadStorageGithub(githubFieldInput); loadStorageTeamName(teamNameFieldInput); loadStorageInstitution(institutionFieldInput); loadStorageGraduation(graduationFieldInput);">
   <header>
     
     <!-- ? Title  -->
@@ -256,6 +256,7 @@
         id="inputCertificates"
         class="form-control form-control--certificates"
         placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+        onchange="store()" 
       >
       <button
         type="button"

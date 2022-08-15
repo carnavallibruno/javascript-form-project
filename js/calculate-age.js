@@ -3,6 +3,7 @@ var inputDay = document.querySelector('#selectDay');
 var inputMonth = document.querySelector('#selectMonth');
 var inputYear = document.querySelector('#selectYear');
 var inputAge = document.querySelector('#formAge');
+var inputDate;
 
 function ageValue (inputDate) {
     
@@ -32,7 +33,7 @@ function ageValue (inputDate) {
             var finalAge = Math.floor((today - birthDate) / 31536000000);
             inputAge.value = finalAge;
             firstForm[2] = 1;
-            return finalAge;
+            return finalAge, inputDate;
         }
     }
 }

@@ -1,7 +1,7 @@
 // ? Validation for Graduation field
-function validateGraduation(graduation) {
-  
-  var graduationFieldInput = document.querySelector("#inputGraduation");
+var graduationFieldInput = document.querySelector("#inputGraduation");
+
+function validateGraduation(graduation) {  
 
   var graduationFieldErrorMessage = document.querySelector(".graduationFieldErrorMessage");
 

@@ -1,7 +1,8 @@
 // ? Validation for Linkedin URL
+var linkedinFieldInput = document.querySelector("#inputLinkedin");
+
 function validateLinkedinUrl(linkedinUrl) {
 
-  var linkedinFieldInput = document.querySelector("#inputLinkedin");
 
   var linkedinFieldErrorMessage = document.querySelector(".linkedinFieldErrorMessage")
 

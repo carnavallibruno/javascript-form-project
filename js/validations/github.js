@@ -1,7 +1,8 @@
 // ? Validation for Github URL
+var githubFieldInput = document.querySelector("#inputGithub");
+
 function validateGithubUrl(githubUrl) {
 
-  var githubFieldInput = document.querySelector("#inputGithub");
 
   var githubFieldErrorMessage = document.querySelector(".githubFieldErrorMessage")
 

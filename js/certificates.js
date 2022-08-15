@@ -47,9 +47,10 @@ function createCertificateInput() {
   newInput.disabled = true;
   newInput.type = "url";
   newInput.classList.add("form-control", "form-control--certificates");
-  newInput.id = "inputCertificates";
+  newInput.id = "inputCertificates" + counter;
   newInput.placeholder = "https://www.linkedin.com/in/foo-bar-3a0560104/";
   newInput.value = inputCertificates.value;
+  newInput.oncchange = store();
 
   return newInput;
 }

@@ -1,7 +1,7 @@
 // ? Validation for Institution field
-function validateInstitutionName(institution) {
-  
-  var institutionFieldInput = document.querySelector("#inputInstitution");
+var institutionFieldInput = document.querySelector("#inputInstitution");
+
+function validateInstitutionName(institution) {  
 
   var institutionFieldErrorMessage = document.querySelector(".institutionFieldErrorMessage");
 

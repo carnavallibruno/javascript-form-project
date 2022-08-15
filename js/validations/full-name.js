@@ -1,7 +1,8 @@
 // ? Validation for the name
+var nameFieldInput = document.querySelector("#inputName");
+var nicknameFieldInput = document.querySelector('#inputNickname');
 function validateFullName(name) {
   
-  var nameFieldInput = document.querySelector("#inputName");
 
   var nameFieldErrorMessage = document.querySelector(".nameFieldErrorMessage");
 

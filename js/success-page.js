@@ -40,9 +40,9 @@ function addModal () {
     basicPhone.innerHTML = "Phone: " + localStorage.phone;
     finalMessage.appendChild(basicPhone);
     
-    // var birthdayInfo = document.createElement("h4");
-    // birthdayInfo.innerHTML = "Age: " + localStorage.;
-    // finalMessage.appendChild(birthdayInfo);
+    var birthdayInfo = document.createElement("h4");
+    birthdayInfo.innerHTML = "Age: " + localStorage.birthday;
+    finalMessage.appendChild(birthdayInfo);
 
     finalMessage.appendChild(breakLine);
 

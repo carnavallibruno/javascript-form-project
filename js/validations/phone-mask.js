@@ -1,6 +1,6 @@
 // ? Validation for number elements
+var phoneFieldInput = document.querySelector("#inputPhone");
 function validateNumber(number) {
-  var phoneFieldInput = document.querySelector("#inputPhone");
 
   var phoneFieldErrorMessage = document.querySelector(".phoneFieldErrorMessage")
 

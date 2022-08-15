@@ -1,8 +1,8 @@
 // ? Validation for the Team Name
+var teamNameFieldInput = document.querySelector("#inputTeamName");
+
 function validateTeamName(teamName) {
   
-  var teamNameFieldInput = document.querySelector("#inputTeamName");
-
   var teamNameFieldErrorMessage = document.querySelector(".teamNameFieldErrorMessage");
 
   var regExTeamName = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
