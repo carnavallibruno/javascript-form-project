@@ -1,4 +1,3 @@
-// finalMessage.innerHTML = "<hr>";
 function insertModalContent(event) {
     event.preventDefault();
     console.log('fooooooooooooi');

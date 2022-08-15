@@ -95,12 +95,7 @@ function changeColor(event) {
   console.log("deu certo!");
   if (heartIconState == 'color: black; fill: white; opacity: 0.75;') {
     event.style = 'color: #074EE8; fill: #074EE8; opacity: 1.0;';
-    // arrayReposition.push(certificate);
   } else {
     event.style = 'color: black; fill: white; opacity: 0.75;';
   }
 }
-
-// arrayCertificates.pop(favorited element)
-// arrayResposition.push(favorited element)
-// arrayCertificates.push(favorited element ...arrayCertificates)

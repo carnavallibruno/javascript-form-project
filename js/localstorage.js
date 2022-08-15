@@ -6,10 +6,6 @@ function store(dataPages){ // ? Stores items in the localStorage
   var nickname = document.getElementById('inputNickname').value;
   var email = document.getElementById('inputEmail').value;
   var phone = document.getElementById('inputPhone').value;
-  // var day = document.getElementById('selectDay').value;
-  // var month = document.getElementById('selectMonth').value;
-  // var year = document.getElementById('selectYear').value;
-  // var age = document.getElementById('inputAge').value;
   var checkbox = document.getElementById('gridCheck').value;
   var linkedin = document.getElementById('inputLinkedin').value;
   var github = document.getElementById('inputGithub').value;

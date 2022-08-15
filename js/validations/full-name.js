@@ -3,7 +3,6 @@ var nameFieldInput = document.querySelector("#inputName");
 var nicknameFieldInput = document.querySelector('#inputNickname');
 function validateFullName(name) {
   
-
   var nameFieldErrorMessage = document.querySelector(".nameFieldErrorMessage");
 
   var regExName = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
